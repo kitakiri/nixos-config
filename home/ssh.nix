@@ -5,7 +5,7 @@
     enable = true;
 
     matchBlocks = {
-      github = {
+      "github.com" = {
         hostname = "github.com";
         user = "git";
         identityFile = "~/.ssh/github_ed25519";
