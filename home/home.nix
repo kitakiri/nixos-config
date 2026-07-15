@@ -6,6 +6,8 @@
 
     ./git.nix
 
+    ./ssh.nix
+
   ];
 
 
