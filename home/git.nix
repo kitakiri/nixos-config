@@ -1,15 +1,14 @@
 { ... }:
 
 {
-
   programs.git = {
-
     enable = true;
 
-    userName = "kitakiri";
-
-    userEmail = "redjulius8@gmail.com";
-
+    settings = {
+      user = {
+        name = "kitakiri";
+        email = "redjulius8@gmail.com";
+      };
+    };
   };
-
 }
