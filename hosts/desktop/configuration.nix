@@ -21,10 +21,21 @@
 
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  #nix.settings.experimental-features = [
+  #  "nix-command"
+  #  "flakes"
+  #];
+
+  nix.settings = { 
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = [
+      "https://cache.nixos.kz/"
+    # "https://cache.nixos.org/"
+    ];
+  };
 
   nixpkgs.config.allowUnfree = true;
 
