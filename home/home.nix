@@ -6,7 +6,7 @@
 
     ./git.nix
 
-    ./ssh.nix
+    ./ssh/ssh.nix
 
   ];
 
