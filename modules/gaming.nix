@@ -1,9 +1,13 @@
-programs.steam = {
+{ pkgs, ... }:
+
+{
+  programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     extraCompatPackages = with pkgs; [
-        proton-ge-bin
+      proton-ge-bin
     ];
-};
+  };
 
-programs.gamemode.enable = true;
+  programs.gamemode.enable = true;
+}

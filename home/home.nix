@@ -8,6 +8,8 @@
 
     ./ssh/ssh.nix
 
+    ./browser.nix
+
     ./packages.nix
   ];
 
