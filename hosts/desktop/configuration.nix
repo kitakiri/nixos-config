@@ -13,6 +13,10 @@
     ../../modules/printing.nix
     ../../modules/users.nix
     ../../modules/programs.nix
+    ../../modules/systemPackages.nix
+
+    ../../modules/gaming.nix
+    ../../modules/browser.nix
 
     ../../modules/hardware/nvidia.nix
 

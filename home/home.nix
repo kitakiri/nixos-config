@@ -8,6 +8,7 @@
 
     ./ssh/ssh.nix
 
+    ./packages.nix
   ];
 
 

@@ -16,12 +16,6 @@
 
     ];
 
-    packages = with pkgs; [
-
-      kdePackages.kate
-
-    ];
-
   };
 
 }

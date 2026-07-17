@@ -1,13 +1,19 @@
 { pkgs, ... }:
 
 {
+  programs = {
+    # firefox = {
+    #   enable = true;
+    # };
 
-  programs.firefox.enable = true;
+    # throne = {
+    #  enable = true;
+    #   tunMode = {
+    #   enable = true;
+    #  };
+    # };
 
-  # programs.git.enable = true; # вкл в /home/git.nix
 
-  environment.systemPackages = with pkgs; [
 
-  ];
-
+  };
 }
