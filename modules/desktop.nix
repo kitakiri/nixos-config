@@ -1,8 +1,4 @@
-{ ... }:
-
-let
-    wallpaper = ../assets/wallhaven-8o2lm2_6000x3375.png;
-in
+{ pkgs, ... }:
 
 {
 
@@ -10,17 +6,18 @@ in
 
   services.desktopManager.plasma6.enable = true;
 
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.plasma-login-manager.enable = true;
 
 
-  services.displayManager.plasma-login-manager = {
+
+  services.displayManager.sddm = {
     enable = true;
+    wayland.enable = true;
 
-    settings = {
-      Greeter.Wallpaper.org.kde.image = {
-        Image = "file://${wallpaper}";
-      };
-    };
+    theme = "breeze";
   };
+
+  environment.etc."sddm/themes/breeze/theme.conf.user".text = ''
+    [General]
+    background=${../assets/wallhaven-8o2lm2_6000x3375.png}
+  '';
 }

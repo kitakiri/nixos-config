@@ -24,36 +24,6 @@
 
   {
 
-    nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
-
-      system = "x86_64-linux";
-
-      modules = [
-
-        ./hosts/vm/configuration.nix
-
-
-        home-manager.nixosModules.home-manager
-
-
-        {
-
-          home-manager = {
-
-            useGlobalPkgs = true;
-
-            useUserPackages = true;
-
-            users.kitakiri = import ./home/home.nix;
-
-          };
-
-        }
-
-      ];
-
-    };
-
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
 
       system = "x86_64-linux";
@@ -65,7 +35,7 @@
 
         home-manager.nixosModules.home-manager
 
-        plasma-manager.homeManagerModules.plasma-manager
+        plasma-manager.homeModules.plasma-manager
 
         {
 
