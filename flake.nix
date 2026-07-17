@@ -59,6 +59,7 @@
 
         home-manager.nixosModules.home-manager
 
+        plasma-manager.homeManagerModules.plasma-manager
 
         {
 

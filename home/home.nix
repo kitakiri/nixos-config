@@ -11,6 +11,8 @@
     ./browser.nix
 
     ./packages.nix
+
+    ./plasma.nix
   ];
 
 
