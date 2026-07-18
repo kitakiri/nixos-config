@@ -9,6 +9,7 @@
     ../../modules/networking.nix
     ../../modules/localization.nix
     ../../modules/desktop.nix
+    ../../modules/fonts.nix
     ../../modules/sound.nix
     ../../modules/printing.nix
     ../../modules/users.nix
