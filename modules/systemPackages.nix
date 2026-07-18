@@ -5,5 +5,6 @@
     nano
     wget
     curl
+    lspci
   ];
 }
