@@ -12,6 +12,7 @@
     ../../modules/sound.nix
     ../../modules/printing.nix
     ../../modules/users.nix
+    ../../modules/sandbox.nix
     ../../modules/programs.nix
     ../../modules/systemPackages.nix
 
