@@ -10,10 +10,10 @@
       "nix"
       "go"
       "rust"
+      # "mcp-server-context7"
     ];
 
     userSettings = {
-      # Настройки док-панелей
       project_panel = {
         dock = "left";
       };
@@ -22,6 +22,18 @@
         dock = "right";
         favorite_models = [];
         model_parameters = [];
+      };
+
+      # Явное включение и настройка MCP-серверов
+      context_servers = {
+        "mcp-server-context7" = {
+          source = "extension";
+          enabled = true;
+
+          settings = {
+            context7_api_key = "ctx7sk-892df689-01cb-4496-a06f-80c4b57b314b";
+          };
+        };
       };
 
       # Внешний вид
@@ -35,7 +47,7 @@
       ui_font_family = "Inter";
       buffer_font_family = "JetBrainsMono Nerd Font";
       ui_font_size = 18;
-      buffer_font_size = 14; # Я изменил на 14, чтобы полностью соответствовало твоему json
+      buffer_font_size = 14;
     };
   };
 }

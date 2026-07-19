@@ -14,7 +14,7 @@
 
       extensions = {
         packages =
-          with inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
+        with inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;
           [
             ublock-origin
             bitwarden
