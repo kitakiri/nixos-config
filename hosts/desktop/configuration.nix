@@ -8,6 +8,7 @@
     ../../modules/boot.nix
     ../../modules/gc.nix
     ../../modules/networking.nix
+    ../../modules/zapret.nix      # ZAPRET врубаю !!! !!!
     ../../modules/localization.nix
     ../../modules/desktop.nix
     ../../modules/fonts.nix

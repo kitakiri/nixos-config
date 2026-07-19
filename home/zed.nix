@@ -10,7 +10,7 @@
       "nix"
       "go"
       "rust"
-      # "mcp-server-context7"
+      "mcp-server-context7"
     ];
 
     userSettings = {

@@ -18,6 +18,8 @@
 
     nur.url = "github:nix-community/NUR";
 
+    zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+
   };
 
 
