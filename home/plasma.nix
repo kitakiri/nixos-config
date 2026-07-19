@@ -1,9 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  programs.plasma = {
-    enable = true;
-  };
+  #programs.plasma.enable = true;
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -14,4 +12,9 @@
     size = 36;
   };
 
+
+  home.sessionVariables = {
+    XCURSOR_THEME = "Breeze";
+    XCURSOR_SIZE = "36";
+  };
 }

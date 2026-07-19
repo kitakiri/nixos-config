@@ -36,12 +36,4 @@
     };
   };
 
-
-
-#  environment.systemPackages = with pkgs; [
-#    kdePackages.breeze
-#  ];
-
-
-
 }

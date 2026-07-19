@@ -5,7 +5,6 @@
     telegram-desktop
     discord
     obsidian
-    zed-editor
     fastfetch
     kdePackages.kate
   ];

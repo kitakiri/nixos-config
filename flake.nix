@@ -16,6 +16,8 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nur.url = "github:nix-community/NUR";
+
   };
 
 
@@ -24,7 +26,7 @@
 
 
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, nur, ... }:
 
   {
 
@@ -48,17 +50,25 @@
             useGlobalPkgs = true;
             useUserPackages = true;
 
-            sharedModules = [
-              plasma-manager.homeModules.plasma-manager
-            ];
+            #sharedModules = [
+            #  plasma-manager.homeModules.plasma-manager
+            #];
 
             users.kitakiri = import ./home/home.nix;
+
+            extraSpecialArgs = {
+              inherit inputs;
+            };
 
           };
 
         }
 
       ];
+
+      specialArgs = {
+        inherit inputs;
+      };
 
     };
 

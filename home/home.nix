@@ -15,6 +15,8 @@
     ./packages.nix
 
     ./plasma.nix
+
+    ./zed.nix
   ];
 
 
