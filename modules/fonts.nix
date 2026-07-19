@@ -7,10 +7,10 @@
     # Список всех необходимых пакетов шрифтов
     packages = with pkgs; [
       inter                         # Лучший современный Sans Serif
-      pt-serif                      # Лучший Serif с идеальной кириллицей в пару к Inter
+      source-serif                  # Лучший Serif с идеальной кириллицей в пару к Inter
       liberation_ttf                # Метрические клоны Times/Arial для документов
       nerd-fonts.jetbrains-mono     # Идеальный Monospace со всеми иконками для терминала
-      noto-fonts-emoji              # Поддержка отображения эмодзи
+      noto-fonts-color-emoji        # Поддержка отображения эмодзи
     ];
 
     # Тонкая настройка рендеринга и дефолтных ассоциаций
@@ -23,16 +23,25 @@
       };
       subpixel = {
         rgba = "rgb";               # Стандарт для большинства ЖК-мониторов
-        lcdfilter = "default";
+        # lcdfilter = "default";
       };
 
       # Принудительно назначаем главные шрифты для всей системы
       defaultFonts = {
         sansSerif = [ "Inter" ];
-        serif     = [ "PT Serif" "Liberation Serif" ];
+        serif     = [ "Source Serif 4" ];
         monospace = [ "JetBrainsMono Nerd Font" ];
         emoji     = [ "Noto Color Emoji" ];
       };
     };
   };
+
+
+
+#  environment.systemPackages = with pkgs; [
+#    kdePackages.breeze
+#  ];
+
+
+
 }
