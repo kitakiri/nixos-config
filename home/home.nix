@@ -15,8 +15,6 @@
     ./packages.nix
 
     ./plasma.nix
-
-    ./fonts.nix
   ];
 
 
