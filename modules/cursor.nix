@@ -13,7 +13,7 @@
   # 3. Принудительно задаем переменные окружения для всей системы
   environment.sessionVariables = {
     XCURSOR_THEME = "Breeze";
-    XCURSOR_SIZE = "36";
+    XCURSOR_SIZE = "54"; # соответствует 36 в wayland
   };
 
   # 4. Явно указываем Xwayland, где искать курсоры

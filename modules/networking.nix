@@ -9,6 +9,8 @@
     tunMode.enable = true;
   };
 
+  services.v2raya.enable = false;
+
   services.cloudflare-warp = {
     enable = true;
   };
