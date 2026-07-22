@@ -6,5 +6,6 @@
     wget
     curl
     qpwgraph # аналог Helvum
+    xray
   ];
 }

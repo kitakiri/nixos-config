@@ -11,6 +11,8 @@
       liberation_ttf                # Метрические клоны Times/Arial для документов
       nerd-fonts.jetbrains-mono     # Идеальный Monospace со всеми иконками для терминала
       noto-fonts-color-emoji        # Поддержка отображения эмодзи
+
+      corefonts                     # times new roman и тд
     ];
 
     # Тонкая настройка рендеринга и дефолтных ассоциаций
@@ -35,5 +37,3 @@
       };
     };
   };
-
-}

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   networking.hostName = "nixos";
@@ -9,7 +9,15 @@
     tunMode.enable = true;
   };
 
-  services.v2raya.enable = false;
+
+  environment.systemPackages = with pkgs; [
+    xray
+  ];
+
+  services.v2raya = {
+    enable = true;
+    cliPackage = pkgs.xray;
+  };
 
   services.cloudflare-warp = {
     enable = true;

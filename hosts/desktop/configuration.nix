@@ -8,12 +8,11 @@
     ../../modules/boot.nix
     ../../modules/gc.nix
     ../../modules/networking.nix
-    ../../modules/xray.nix
+    # ../../modules/xray.nix
     # ../../modules/zapret.nix      # ZAPRET врубаю !!! !!!
     ../../modules/localization.nix
     ../../modules/desktop.nix
     ../../modules/fonts.nix
-    # ../../modules/cursor.nix
     ../../modules/sound.nix
     ../../modules/printing.nix
     ../../modules/users.nix
