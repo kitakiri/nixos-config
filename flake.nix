@@ -15,9 +15,7 @@
     };
 
     nur.url = "github:nix-community/NUR";
-
   };
-
 
 
 
@@ -34,7 +32,6 @@
         ./hosts/desktop/configuration.nix
 
         home-manager.nixosModules.home-manager
-        plasma-manager.homeModules.plasma-manager
 
         {
           home-manager = {

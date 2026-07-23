@@ -37,6 +37,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # система была установлена с 26.05
   system.stateVersion = "26.05";
 
 }

@@ -33,6 +33,6 @@
 
     # Wallpaper (Desktop & Lockscreen)
     "plasmarc"."Wallpapers"."usersWallpapers" = "/home/kitakiri/nixos-config/assets/wallhaven-8o2lm2_6000x3375.png";
-    "kscreenlockerrc"."Greeter/Wallpaper/org.kde.image/General"."Image" = "file:///home/kitakiri/nixos-config/assets/wallhaven-8o2lm2_6000x3375.png"
+    "kscreenlockerrc"."Greeter/Wallpaper/org.kde.image/General"."Image" = "file:///home/kitakiri/nixos-config/assets/wallhaven-8o2lm2_6000x3375.png";
   };
 }
