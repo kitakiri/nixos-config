@@ -7,16 +7,17 @@
     ./xdg.nix
 
     ./git.nix
-
     ./ssh/ssh.nix
+    ./fish.nix
 
     ./browser.nix
+    ./zed.nix
 
     ./packages.nix
 
-    ./plasma.nix
+    ./plasma/plasma.nix
 
-    ./zed.nix
+
   ];
 
 

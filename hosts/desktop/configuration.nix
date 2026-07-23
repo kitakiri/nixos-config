@@ -8,8 +8,6 @@
     ../../modules/boot.nix
     ../../modules/gc.nix
     ../../modules/networking.nix
-    # ../../modules/xray.nix
-    # ../../modules/zapret.nix      # ZAPRET врубаю !!! !!!
     ../../modules/localization.nix
     ../../modules/desktop.nix
     ../../modules/fonts.nix
@@ -17,7 +15,7 @@
     ../../modules/printing.nix
     ../../modules/users.nix
     ../../modules/sandbox.nix
-    ../../modules/programs.nix
+    ../../modules/fish.nix
     ../../modules/systemPackages.nix
 
     ../../modules/gaming.nix
@@ -25,11 +23,6 @@
     ../../modules/hardware/nvidia.nix
 
   ];
-
-  #nix.settings.experimental-features = [
-  #  "nix-command"
-  #  "flakes"
-  #];
 
   nix.settings = {
     experimental-features = [
