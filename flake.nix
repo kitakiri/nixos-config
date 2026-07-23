@@ -1,10 +1,13 @@
 {
   description = "Kitakiri's NixOS configuration";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05"; перехожу со stable на unstable
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      # url = "github:nix-community/home-manager/release-26.05";
+      # # тут тоже надо перейти на unstable со stable
+      url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,9 +19,6 @@
 
     nur.url = "github:nix-community/NUR";
   };
-
-
-
 
 
 
