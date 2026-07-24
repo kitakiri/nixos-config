@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 {
-  fonts = {
-    enableDefaultPackages = true;
 
-    # Список всех необходимых пакетов шрифтов
+  fonts = {
     packages = with pkgs; [
       inter                         # Лучший современный Sans Serif
       source-serif                  # Лучший Serif с идеальной кириллицей в пару к Inter
@@ -14,6 +12,7 @@
 
       corefonts                     # times new roman и тд
     ];
+    enableDefaultPackages = true;
 
     # Тонкая настройка рендеринга и дефолтных ассоциаций
     fontconfig = {
@@ -25,6 +24,7 @@
       };
       subpixel = {
         rgba = "rgb";               # Стандарт для большинства ЖК-мониторов
+        lcdfilter = "default";
       };
 
       # Принудительно назначаем главные шрифты для всей системы

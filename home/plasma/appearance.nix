@@ -17,7 +17,7 @@
     "kdeglobals"."General"."AccentColor" = "235,194,236";
     "kdeglobals"."General"."LastUsedCustomAccentColor" = "235,194,236";
     "kdeglobals"."KDE"."AutomaticLookAndFeel" = true;
-    "kdeglobals"."KDE"."AnimationDurationFactor" = 1.414213562373095;
+    "kdeglobals"."KDE"."AnimationDurationFactor" = 1.5;
     "kdeglobals"."KDE"."contrast" = 4;
     "kdeglobals"."KDE"."frameContrast" = 0.2;
 
