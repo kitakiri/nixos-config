@@ -19,6 +19,7 @@
     ../../modules/systemPackages.nix
 
     ../../modules/gaming.nix
+    ../../modules/nix-ld.nix
 
     ../../modules/hardware/nvidia.nix
     ../../modules/hardware/bluetooth.nix
