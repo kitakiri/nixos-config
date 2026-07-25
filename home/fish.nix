@@ -1,4 +1,4 @@
-{...}:
+{ pkgs,...}:
 
 {
   programs.fish = {
@@ -25,5 +25,10 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
+  };
+
+  services.tldr-update = {
+    enable = true;
+    package = pkgs.tldr;
   };
 }
