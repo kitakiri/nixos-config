@@ -38,7 +38,7 @@
       # А само правило описывается как отдельный (соседний) блок на том же уровне
       "fc611193-9dbc-41c8-9605-3c37b127a4f4" = {
         Description = "Скрыть телегу из демки";
-        Enabled = false;
+        Enabled = true;
         wmclass = "org.telegram.desktop";
         wmclassmatch = 1;
       };
