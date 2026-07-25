@@ -21,6 +21,7 @@
     ../../modules/gaming.nix
 
     ../../modules/hardware/nvidia.nix
+    ../../modules/hardware/bluetooth.nix
 
   ];
 

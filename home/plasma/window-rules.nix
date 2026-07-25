@@ -32,13 +32,16 @@
     # Window Rules
     kwinrulesrc = {
       General = {
-        rules = "fc611193-9dbc-41c8-9605-3c37b127a4f4";
+        #count = 1;
+        rules = "69c13473-c249-4824-8763-1dc9628bd956";
       };
 
       # А само правило описывается как отдельный (соседний) блок на том же уровне
-      "fc611193-9dbc-41c8-9605-3c37b127a4f4" = {
+      "69c13473-c249-4824-8763-1dc9628bd956" = {
         Description = "Скрыть телегу из демки";
         Enabled = true;
+        excludefromcapture = true;
+        excludefromcapturerule = 3;
         wmclass = "org.telegram.desktop";
         wmclassmatch = 1;
       };
