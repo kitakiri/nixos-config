@@ -29,13 +29,19 @@
     "kwinrc"."Plugins"."magiclampEnabled" = true;
     "kwinrc"."Plugins"."squashEnabled" = false;
 
-
     # Window Rules
-    "kwinrulesrc"."General"."count" = 1;
-    "kwinrulesrc"."General"."rules" = "fc611193-9dbc-41c8-9605-3c37b127a4f4";
-    "kwinrulesrc"."fc611193-9dbc-41c8-9605-3c37b127a4f4"."Description" = "Параметры для org.telegram.desktop";
-    "kwinrulesrc"."fc611193-9dbc-41c8-9605-3c37b127a4f4"."Enabled" = false;
-    "kwinrulesrc"."fc611193-9dbc-41c8-9605-3c37b127a4f4"."wmclass" = "org.telegram.desktop";
-    "kwinrulesrc"."fc611193-9dbc-41c8-9605-3c37b127a4f4"."wmclassmatch" = 1;
+    kwinrulesrc = {
+      General = {
+        rules = "fc611193-9dbc-41c8-9605-3c37b127a4f4";
+      };
+
+      # А само правило описывается как отдельный (соседний) блок на том же уровне
+      "fc611193-9dbc-41c8-9605-3c37b127a4f4" = {
+        Description = "Скрыть телегу из демки";
+        Enabled = false;
+        wmclass = "org.telegram.desktop";
+        wmclassmatch = 1;
+      };
+    };
   };
 }
