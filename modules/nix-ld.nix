@@ -15,16 +15,16 @@
       vulkan-loader
 
       # --- Стек X11 и устройства ввода ---
-      xorg.libX11        # libX11.so.6
-      xorg.libXcursor    # libXcursor.so.1
-      xorg.libXrandr
-      xorg.libXext
-      xorg.libXi
-      xorg.libXinerama
-      xorg.libXrender
-      xorg.libXfixes
-      xorg.libXdamage
-      xorg.libXtst
+      libx11        # libX11.so.6
+      libxcursor    # libXcursor.so.1
+      libxrandr
+      libxext
+      libxi
+      libxinerama
+      libxrender
+      libxfixes
+      libxdamage
+      libxtst
       libxkbcommon       # libxkbcommon.so.0
 
       # --- Звук, геймпады и системные шины ---
