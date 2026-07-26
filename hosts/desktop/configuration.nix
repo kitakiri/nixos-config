@@ -8,6 +8,7 @@
     ../../modules/boot.nix
     ../../modules/gc.nix
     ../../modules/networking.nix
+    ../../modules/kdeConnect.nix
     ../../modules/localization.nix
     ../../modules/desktop.nix
     ../../modules/fonts.nix

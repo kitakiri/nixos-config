@@ -7,10 +7,10 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#desktop";
       nrb = "sudo nixos-rebuild build --flake ~/nixos-config#desktop";
-      nfu = "nix flake update ~/nixos-config";
-      nfc = "nix flake check ~/nixos-config";
+      nfu = "nix flake update --flake ~/nixos-config";
+      nfc = "nix flake check --flake ~/nixos-config";
       ncg = "sudo nix-collect-garbage -d";
-      nup = "nix flake update ~/nixos-config && sudo nixos-rebuild switch --flake ~/nixos-config#desktop";
+      nup = "nix flake update --flake ~/nixos-config && sudo nixos-rebuild switch --flake ~/nixos-config#desktop";
       ngen = "sudo nixos-rebuild list-generations";
 
       cdconfignixos = "cd ~/nixos-config";

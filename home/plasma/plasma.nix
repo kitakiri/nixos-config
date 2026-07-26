@@ -9,7 +9,6 @@
     ./apps.nix
 
     ./kdePackages.nix
-    ./kdeConnect.nix
   ];
 
   programs.plasma = {
