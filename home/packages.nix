@@ -6,6 +6,5 @@
     discord
     obsidian
     fastfetch
-    kdePackages.kate
   ];
 }

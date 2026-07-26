@@ -17,13 +17,15 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    nur.url = "github:nix-community/NUR";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
 
   outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, nur, ... }:
-
   {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
