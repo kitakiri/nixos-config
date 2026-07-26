@@ -9,5 +9,6 @@
     filelight
     kcolorchooser
     isoimagewriter
+    dragon
   ];
 }

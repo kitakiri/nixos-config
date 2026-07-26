@@ -4,35 +4,46 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      # --- Закрывает выходы из вашего ldd ---
-      stdenv.cc.cc.lib # libstdc++.so.6
-      gtk3             # libgtk-3.so.0, libgdk-3.so.0
-      glib             # libglib-2.0.so.0, libgobject-2.0.so.0, libgio-2.0.so.0
-      xorg.libX11      # libX11.so.6
-      xorg.libXrandr   # libXrandr.so.2
+      # --- C++ Runtime & системные зависимости ---
+      stdenv.cc.cc.lib   # libstdc++.so.6
+      zlib
+      openssl
+      curl
 
-      # --- Спутники GTK3 (нужны для отрисовки интерфейса лаунчера) ---
+      # --- Графика и отрисовка (OpenGL / Vulkan) ---
+      libGL
+      vulkan-loader
+
+      # --- Стек X11 и устройства ввода ---
+      xorg.libX11        # libX11.so.6
+      xorg.libXcursor    # libXcursor.so.1
+      xorg.libXrandr
+      xorg.libXext
+      xorg.libXi
+      xorg.libXinerama
+      xorg.libXrender
+      xorg.libXfixes
+      xorg.libXdamage
+      xorg.libXtst
+      libxkbcommon       # libxkbcommon.so.0
+
+      # --- Звук, геймпады и системные шины ---
+      alsa-lib
+      libpulseaudio      # Звук через PulseAudio / PipeWire
+      udev               # Для геймпадов и джойстиков
+      dbus
+
+      # --- GTK3 / GLib (для лаунчера) ---
+      gtk3
+      glib
       cairo
       pango
       gdk-pixbuf
       atk
 
-      # --- Графика, звук и шрифты (потребуются при старте самой игры) ---
-      libGL
-      vulkan-loader
-      alsa-lib
-      fontconfig
+      # --- Шрифты ---
+      # fontconfig
       freetype
-      dbus
-      zlib
-
-      # --- Дополнительные модули X11 для игр ---
-      xorg.libXext
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXinerama
-      xorg.libXrender
-      xorg.libXfixes
     ];
   };
 }
