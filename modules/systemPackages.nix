@@ -6,7 +6,7 @@
     wget
     curl
     qpwgraph # аналог Helvum
-    xray
+    # xray
     qbittorrent
     htop btop
     tldr # настроил обнову в home/fish.nix
