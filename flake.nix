@@ -23,10 +23,14 @@
     };
   };
 
-
-
-  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, nur, ... }:
-  {
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    plasma-manager,
+    nur,
+    ...
+  }: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 

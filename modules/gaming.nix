@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -11,8 +9,9 @@
 
   programs.gamemode.enable = true;
 
+  hardware.steam-hardware.enable = true;
   services.udev = {
-    packages = with pkgs; [ game-devices-udev-rules ];
+    packages = with pkgs; [game-devices-udev-rules];
     extraRules = ''
       KERNEL=="hidraw*", ATTRS{idVendor}=="2dc8", MODE="0660", GROUP="input"
       KERNEL=="hidraw*", KERNELS=="*2DC8:*", MODE="0660", GROUP="input"

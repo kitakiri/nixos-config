@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
-
     ./hardware-configuration.nix
 
     ../../modules/boot.nix
@@ -14,7 +15,6 @@
     ../../modules/users.nix
     ../../modules/programs.nix
     ../../modules/virtualization.nix
-
   ];
 
   nix.settings.experimental-features = [
@@ -25,5 +25,4 @@
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "26.05";
-
 }

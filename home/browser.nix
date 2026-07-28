@@ -1,8 +1,9 @@
 # { pkgs, ... }:
-
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
 
@@ -13,12 +14,10 @@
       };
 
       extensions = {
-        packages =
-        with inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;
-          [
-            ublock-origin
-            bitwarden
-          ];
+        packages = with inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons; [
+          ublock-origin
+          bitwarden
+        ];
       };
     };
   };

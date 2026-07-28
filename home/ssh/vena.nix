@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.ssh.settings."vena" = {
     HostName = "147.45.41.124";
     User = "kitakiri";

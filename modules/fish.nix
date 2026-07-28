@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.fish.enable = true;
 
   programs.bash.interactiveShellInit = ''

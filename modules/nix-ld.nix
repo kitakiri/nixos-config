@@ -1,11 +1,9 @@
-{ pkgs,...}:
-
-{
+{pkgs, ...}: {
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
       # --- C++ Runtime & системные зависимости ---
-      stdenv.cc.cc.lib   # libstdc++.so.6
+      stdenv.cc.cc.lib # libstdc++.so.6
       zlib
       openssl
       curl
@@ -15,8 +13,8 @@
       vulkan-loader
 
       # --- Стек X11 и устройства ввода ---
-      libx11        # libX11.so.6
-      libxcursor    # libXcursor.so.1
+      libx11 # libX11.so.6
+      libxcursor # libXcursor.so.1
       libxrandr
       libxext
       libxi
@@ -25,12 +23,12 @@
       libxfixes
       libxdamage
       libxtst
-      libxkbcommon       # libxkbcommon.so.0
+      libxkbcommon # libxkbcommon.so.0
 
       # --- Звук, геймпады и системные шины ---
       alsa-lib
-      libpulseaudio      # Звук через PulseAudio / PipeWire
-      udev               # Для геймпадов и джойстиков
+      libpulseaudio # Звук через PulseAudio / PipeWire
+      udev # Для геймпадов и джойстиков
       dbus
 
       # --- GTK3 / GLib (для лаунчера) ---

@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
-
     ./hardware-configuration.nix
 
     ../../modules/boot.nix
@@ -24,7 +25,6 @@
 
     ../../modules/hardware/nvidia.nix
     ../../modules/hardware/bluetooth.nix
-
   ];
 
   nix.settings = {
@@ -34,7 +34,7 @@
     ];
     substituters = [
       "https://cache.nixos.kz/"
-    # "https://cache.nixos.org/"
+      # "https://cache.nixos.org/"
     ];
   };
 
@@ -42,5 +42,4 @@
 
   # система была установлена с 26.05
   system.stateVersion = "26.05";
-
 }

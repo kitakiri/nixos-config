@@ -1,6 +1,5 @@
 {
   programs.plasma.configFile = {
-
     # Spectacle (Screenshots)
     "spectaclerc"."Annotations"."annotationToolType" = 6;
     "spectaclerc"."GuiConfig"."quitAfterSaveCopyExport" = true;

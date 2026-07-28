@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nano
     wget
@@ -8,7 +6,8 @@
     qpwgraph # аналог Helvum
     # xray
     qbittorrent
-    htop btop
+    htop
+    btop
     tldr # настроил обнову в home/fish.nix
   ];
 }

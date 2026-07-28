@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
-
     ./xdg.nix
 
     ./git.nix
@@ -17,9 +18,8 @@
 
     ./plasma/plasma.nix
 
-
+    ./emulation.nix
   ];
-
 
   home.username = "kitakiri";
 
@@ -28,5 +28,4 @@
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
-
 }

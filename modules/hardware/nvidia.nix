@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Vklyuchenie graficheskogo podosnovaniya (OpenGL / Vulkan)
   hardware.graphics = {
     enable = true;
@@ -8,7 +10,7 @@
   };
 
   # Ukazyvaem X-serveru ispol'zovat' NVIDIA drayver
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     # Modesetting vsegda dolzhen byt' true dlya raboty Wayland
