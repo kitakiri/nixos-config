@@ -20,9 +20,14 @@
       # Sega Genesis / Mega Drive / Master System / Game Gear
       genesis-plus-gx.enable = true;
 
-      # PlayStation 1 (Если захочется запускать PS1 прямо из RetroArch)
+      # Nintendo DS
+      melonds.enable = true;
+
+      # 3D Nintendo (N64)
+      mupen64plus.enable = true;
+
+      # PlayStation 1 (Оставили одно лучшее ядро)
       swanstation.enable = true;
-      beetle-psx-hw.enable = true;
     };
 
     # Глобальные настройки, автоматически заносимые в retroarch.cfg
@@ -48,8 +53,6 @@
   # 2. Standalone эмуляторы (PS1-PS3) и Единый фронтенд
   # =========================================================================
   home.packages = with pkgs; [
-    # PS1 (Standalone — максимальная гибкость настройки PGXP, шейдеров и GUI)
-    duckstation
 
     # PS2 (Standalone — полностью обновленный Qt/Vulkan интерфейс)
     pcsx2
@@ -58,6 +61,6 @@
     rpcs3
 
     # Фронтенд для геймпада (Заменяет запуск каждого эмулятора вручную)
-    emulationstation-de
+    pegasus-frontend
   ];
 }

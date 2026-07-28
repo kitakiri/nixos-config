@@ -1,17 +1,56 @@
-{...}: {
+{pkgs, ...}: {
   services.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
 
   services.pipewire = {
     enable = true;
-
     alsa.enable = true;
-
     alsa.support32Bit = true;
-
     pulse.enable = true;
-
     jack.enable = true;
+
+    # низкая задержка для игры на гитаре
+    extraConfig.pipewire = {
+      "10-clock-rate" = {
+        "context.properties" = {
+          "default.clock.rate" = 48000;
+          "default.clock.quantum" = 128;     # ~2.6 ms задержки (при желании можно поставить 64)
+          "default.clock.min-quantum" = 64;
+          "default.clock.max-quantum" = 1024;
+        };
+      };
+    };
   };
+
+
+  # Добавляем пользователя в группу audio
+  users.users.kitakiri.extraGroups = [ "audio" ];
+
+  # Софт для гитары и маршрутизации
+  environment.systemPackages = with pkgs; [
+    # Маршрутизаторы и хосты
+    carla                  # Удобный хост для VST/LV2 с визуальным патчбеем
+
+    # Гитарные плагины и эмуляторы
+    guitarix               # Классический гитарный процессор
+    neural-amp-modeler-lv2 # NAM — отличные нейропрофили усилителей и кабинетов
+    gxplugins-lv2          # Набор дисторшнов и педалей от команды Guitarix
+    lsp-plugins            # Набор кастомных эффектов, ревербов и эквалайзеров
+  ];
+
+  # security.pam.loginLimits = [
+  #   {
+  #     domain = "@audio";
+  #     item = "memlock";
+  #     type = "-";
+  #     value = "unlimited";
+  #   }
+  #   {
+  #     domain = "@audio";
+  #     item = "rtprio";
+  #     type = "-";
+  #     value = "99";
+  #   }
+  # ];
 }
