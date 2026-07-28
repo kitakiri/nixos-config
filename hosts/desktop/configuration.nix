@@ -13,7 +13,7 @@
     ../../modules/localization.nix
     ../../modules/desktop.nix
     ../../modules/fonts.nix
-    ../../modules/sound.nix
+    ../../modules/sound/sound.nix
     ../../modules/printing.nix
     ../../modules/users.nix
     ../../modules/sandbox.nix
