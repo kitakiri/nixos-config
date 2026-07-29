@@ -34,12 +34,15 @@
     ];
     substituters = [
       "https://cache.nixos.kz/"
-      # "https://cache.nixos.org/"
+      "https://cache.nixos.org/"
     ];
   };
-
   nixpkgs.config.allowUnfree = true;
-
   # система была установлена с 26.05
   system.stateVersion = "26.05";
+
+
+  # кастомные модули:
+  # Включаем daw , уменьшаем задержки, включаем софт для гитары и группу audio
+  modules.sound.music.enable = true;
 }

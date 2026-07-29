@@ -18,7 +18,8 @@
 
     # Upravlenie pitaniem (false dlya is klyucheniya problem s provuzhdeniem)
     powerManagement.enable = true;
-    # powerManagement.finegrained = false;
+    # эффективный переход в спящий режим
+    powerManagement.finegrained = true;
 
     # Proprietary drayver (false) chasto stabil'nee dlya serii RTX 40xx, chem open-source
     open = true;

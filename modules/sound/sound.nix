@@ -3,9 +3,6 @@
     ./music.nix
   ];
 
-  # Включаем музыкальные настройки
-  modules.sound.music.enable = true;
-
   services.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
