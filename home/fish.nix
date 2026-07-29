@@ -5,6 +5,7 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#desktop";
       nrb = "sudo nixos-rebuild build --flake ~/nixos-config#desktop";
+      nrr = "sudo nixos-rebuild --rollback";
       nfu = "nix flake update --flake ~/nixos-config";
       nfc = "nix flake check --flake ~/nixos-config";
       ncg = "sudo nix-collect-garbage -d";
