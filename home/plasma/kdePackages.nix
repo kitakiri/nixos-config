@@ -8,5 +8,6 @@
     kcolorchooser
     isoimagewriter
     dragon
+    krita
   ];
 }

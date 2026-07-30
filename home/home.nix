@@ -18,7 +18,7 @@
 
     ./plasma/plasma.nix
 
-    ./emulation.nix
+    # ./emulation.nix
   ];
 
   home.username = "kitakiri";
