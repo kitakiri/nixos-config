@@ -13,6 +13,7 @@
 
     # KWin Mouse & Window Snap
     "kwinrc"."MouseBindings"."CommandAll1" = "Activate, raise and move";
+    "kwinrc"."Windows"."FocusStealingPreventionLevel" = 0;
     "kwinrc"."Windows"."WindowSnapZone" = 1;
     "kwinrc"."Xwayland"."Scale" = 1;
 

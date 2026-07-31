@@ -19,6 +19,7 @@
     ./plasma/plasma.nix
 
     # ./emulation.nix
+    ./lutris.nix
   ];
 
   home.username = "kitakiri";
