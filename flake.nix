@@ -26,6 +26,9 @@
       url = "github:noctalia-dev/noctalia";
       # разрабы не рекомендуют следовать кэшу nixpkgs
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+    };
   };
 
   outputs = inputs @ {
@@ -49,7 +52,7 @@
 
             sharedModules = [
               plasma-manager.homeModules.plasma-manager
-
+              inputs.niri.homeModules.niri
               inputs.noctalia.homeModules.default
             ];
 

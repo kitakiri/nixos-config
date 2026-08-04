@@ -38,48 +38,46 @@
       # Горячие клавиши
       #
       binds = with config.lib.niri.actions; {
-          #
-          # Терминал
-          #
+        # Приложения и меню
         "Super+Return".action = spawn "foot";
-          #
-          # Закрыть окно
-          #
-          "Super+Q".action = close-window;
+        "Alt+Space".action   = spawn "noctalia-shell" "toggle-launcher";
 
-          #
-          # Полноэкранный режим
-          #
-          "Super+F".action = fullscreen-window;
+        # Управление окнами
+        "Super+Q".action = close-window;
+        "Super+F".action = fullscreen-window;
+        "Super+W".action = toggle-overview;
 
-          #
-          # Скрыть (отправить в overview)
-          #
-          "Super+H".action = minimize-window;
+        # Навигация по окнам в колонках
+        "Super+Left".action  = focus-column-left;
+        "Super+Right".action = focus-column-right;
+        "Super+Up".action    = focus-window-up;
+        "Super+Down".action  = focus-window-down;
 
-          #
-          # Перемещение фокуса
-          #
-          "Super+Left".action  = focus-column-left;
-          "Super+Right".action = focus-column-right;
-          "Super+Up".action    = focus-window-up;
-          "Super+Down".action  = focus-window-down;
+        # Перемещение колонок
+        "Super+Shift+Left".action  = move-column-left;
+        "Super+Shift+Right".action = move-column-right;
 
-          #
-          # Перемещение окон
-          #
-          "Super+Shift+Left".action  = move-column-left;
-          "Super+Shift+Right".action = move-column-right;
+        # Изменение ширины и высоты
+        "Super+R".action           = switch-preset-column-width;
+        "Super+Minus".action       = set-column-width "-10%";
+        "Super+Equal".action       = set-column-width "+10%";
+        "Super+Shift+Minus".action = set-window-height "-10%";
+        "Super+Shift+Equal".action = set-window-height "+10%";
 
-          #
-          # Перезагрузить конфиг
-          #
-          "Super+Shift+R".action = reload-config;
+        # Рабочие столы (в Niri они расположены вертикально)
+        "Super+Ctrl+Down".action       = focus-workspace-down;
+        "Super+Ctrl+Up".action         = focus-workspace-up;
+        "Super+Ctrl+Shift+Down".action = move-column-to-workspace-down;
+        "Super+Ctrl+Shift+Up".action   = move-column-to-workspace-up;
 
-          #
-          # Выход из niri
-          #
-          # "Super+Shift+E".action = quit;
+        # Переход на конкретные столы
+        "Ctrl+F1".action = focus-workspace 1;
+        "Ctrl+F2".action = focus-workspace 2;
+        "Ctrl+F3".action = focus-workspace 3;
+        "Ctrl+F4".action = focus-workspace 4;
+
+        # Скриншот выделенной области в буфер обмена
+        "Super+Shift+S".action = spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy";
       };
 
       #

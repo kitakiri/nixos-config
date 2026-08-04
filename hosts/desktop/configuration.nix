@@ -11,7 +11,7 @@
     ../../modules/networking.nix
     ../../modules/kdeConnect.nix
     ../../modules/localization.nix
-    ../../modules/desktop/default.nix
+    ../../modules/desktop/niri/default.nix
     ../../modules/fonts.nix
     ../../modules/sound/sound.nix
     ../../modules/printing.nix
@@ -33,9 +33,15 @@
       "flakes"
     ];
     substituters = [
+      "https://noctalia.cachix.org"
+      "https://niri.cachix.org"
       "https://cache.nixos.kz/"
       "https://cache.nixos.org/"
-      "https://noctalia.cachix.org"
+
+    ];
+    trusted-public-keys = [
+      "noctalia.cachix.org-1:5p6S5A19X1d0kP+e/V6uA121110q6c="
+      "niri.cachix.org-1:W43zgB3z572LgSm0qCdgQXYGZ2yXMh86e8vKBL128yX="
     ];
   };
   nixpkgs.config.allowUnfree = true;
