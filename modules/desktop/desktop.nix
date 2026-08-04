@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{config, pkgs, ...}:
 let
   sessions = "${config.services.displayManager.sessionData.desktops}/share";
 in
