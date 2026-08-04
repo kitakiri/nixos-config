@@ -14,8 +14,8 @@
     "kdeglobals"."General"."XftSubPixel" = "rgb";
 
     # Colors & Theme Look and Feel
-    "kdeglobals"."General"."AccentColor" = "235,194,236";
-    "kdeglobals"."General"."LastUsedCustomAccentColor" = "235,194,236";
+    "kdeglobals"."General"."AccentColor" = "155,171,236";
+    "kdeglobals"."General"."LastUsedCustomAccentColor" = "155,171,236";
     "kdeglobals"."KDE"."AutomaticLookAndFeel" = true;
     "kdeglobals"."KDE"."AnimationDurationFactor" = 1.5;
     "kdeglobals"."KDE"."contrast" = 4;
