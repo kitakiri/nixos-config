@@ -16,8 +16,8 @@
 
     ./packages.nix
 
-    ./plasma/plasma.nix
-
+    # ./plasma/plasma.nix
+    ./niri/default.nix
     # ./emulation.nix
     ./lutris.nix
   ];

@@ -11,7 +11,7 @@
     ../../modules/networking.nix
     ../../modules/kdeConnect.nix
     ../../modules/localization.nix
-    ../../modules/desktop.nix
+    ../../modules/desktop/default.nix
     ../../modules/fonts.nix
     ../../modules/sound/sound.nix
     ../../modules/printing.nix
@@ -35,6 +35,7 @@
     substituters = [
       "https://cache.nixos.kz/"
       "https://cache.nixos.org/"
+      "https://noctalia.cachix.org"
     ];
   };
   nixpkgs.config.allowUnfree = true;

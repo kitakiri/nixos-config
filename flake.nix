@@ -21,6 +21,11 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      # разрабы не рекомендуют следовать кэшу nixpkgs
+    };
   };
 
   outputs = inputs @ {
@@ -36,9 +41,7 @@
 
       modules = [
         ./hosts/desktop/configuration.nix
-
         home-manager.nixosModules.home-manager
-
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -46,6 +49,8 @@
 
             sharedModules = [
               plasma-manager.homeModules.plasma-manager
+
+              inputs.noctalia.homeModules.default
             ];
 
             users.kitakiri = import ./home/home.nix;
