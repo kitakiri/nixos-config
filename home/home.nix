@@ -20,6 +20,8 @@
     ./niri/default.nix
     # ./emulation.nix
     ./lutris.nix
+    ./terminal.nix
+    ./filemanager.nix
   ];
 
   home.username = "kitakiri";

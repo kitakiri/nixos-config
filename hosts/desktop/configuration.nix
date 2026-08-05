@@ -13,12 +13,14 @@
     ../../modules/localization.nix
     ../../modules/desktop/niri/default.nix
     ../../modules/fonts.nix
+    ../../modules/icons.nix
     ../../modules/sound/sound.nix
     ../../modules/printing.nix
     ../../modules/users.nix
     ../../modules/sandbox.nix
     ../../modules/fish.nix
     ../../modules/systemPackages.nix
+    # ../../modules/sessionVariables.nix
 
     ../../modules/gaming.nix
     ../../modules/nix-ld.nix
@@ -40,7 +42,7 @@
 
     ];
     trusted-public-keys = [
-      "noctalia.cachix.org-1:5p6S5A19X1d0kP+e/V6uA121110q6c="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       "niri.cachix.org-1:W43zgB3z572LgSm0qCdgQXYGZ2yXMh86e8vKBL128yX="
     ];
   };
