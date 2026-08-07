@@ -1,24 +1,31 @@
 { ... }: {
-  programs.ghostty = {
+  programs.foot = {
     enable = true;
 
-    # Интеграция с вашим шеллом (zsh, bash или fish)
-    enableZshIntegration = true;
-
     settings = {
-      # Noctalia генерирует тему в файле темы Ghostty
-      theme = "noctalia";
+      main = {
+        font = "JetBrainsMono Nerd Font:size=14";
+        pad = "10x10";
+        include = "~/.config/foot/themes/noctalia";
+      };
 
-      # Внешний вид и шрифт
-      font-family = "Inter Display";
-      font-size = 11;
+      colors-dark = {
+        alpha = "0.85";
+      };
 
-      # Отключаем рамки окна (Niri сам управляет границами)
-      window-decoration = false;
+      key-bindings = {
+        # Страницы
+        scrollback-up-page = "Shift+Page_Up Home";
+        scrollback-down-page = "Shift+Page_Down End";
 
-      # Рендеринг и Wayland
-      gtk-single-instance = true;
-      confirm-close-surface = false;
+        # Полстраницы / Home / End
+        scrollback-up-half-page = "Page_Up";
+        scrollback-down-half-page = "Page_Down";
+
+        # Построчно
+        scrollback-up-line = "Shift+Up";
+        scrollback-down-line = "Shift+Down";
+      };
     };
   };
 }

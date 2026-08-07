@@ -5,5 +5,7 @@
     obsidian
     fastfetch
     krita
+    bazaar
+    kdePackages.discover
   ];
 }

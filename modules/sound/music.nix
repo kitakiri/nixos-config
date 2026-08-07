@@ -9,7 +9,8 @@
       "10-clock-rate" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
-          "default.clock.quantum" = 128;     # ~2.6 ms задержки (при желании можно поставить 64)
+          # "default.clock.quantum" = 128; # хорошая задержка на гитаре
+          "default.clock.quantum" = 256;
           "default.clock.min-quantum" = 64;
           "default.clock.max-quantum" = 1024;
         };

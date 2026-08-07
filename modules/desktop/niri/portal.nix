@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -7,17 +6,17 @@
   xdg.portal = {
     enable = true;
 
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
+    # extraPortals = with pkgs; [
+    #   xdg-desktop-portal-gtk
+    # ];
 
-    config = {
+    # config = {
 
-      common = {
-        default = [
-          "gtk"
-        ];
-      };
-    };
+    #   common = {
+    #     default = [
+    #       # "gtk"
+    #     ];
+    #   };
+    # };
   };
 }

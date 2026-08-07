@@ -1,10 +1,13 @@
-{ config, inputs, ... }: {
+{ config, ... }: {
   programs.noctalia = {
     enable = true;
 
     settings = {
       accessibility.ui_scale = 1.15;
-      audio.enable_sounds = true;
+      audio = {
+        enable_sounds = true;
+        volume = 1.0;
+      };
 
       bar.default = {
         background_opacity = 0.85;
@@ -60,7 +63,7 @@
         background_opacity = 0.85;
         enabled = true;
         inactive_opacity = 0.9;
-        layer = "overlay";
+        layer = "top";
         magnification_scale = 1.65;
         radius = 40;
         radius_bottom_left = 8;
@@ -148,6 +151,7 @@
         app_icon_color = "primary";
         font_family = "Inter";
         niri_overview_type_to_launch_enabled = true;
+        clipboard_auto_paste = "off";
         panel_anchor_bar = "default";
         polkit_agent = true;
         telemetry_enabled = true;
@@ -163,13 +167,13 @@
       };
 
       theme = {
-        builtin = "Noctalia";
-        community_palette = "Oxocarbon";
+        # builtin = "Noctalia";
+        # community_palette = "Oxocarbon";
         mode = "auto";
         source = "wallpaper";
-        wallpaper_scheme = "faithful";
+        wallpaper_scheme = "m3-tonal-spot";
         templates = {
-          builtin_ids = [ "gtk3" "gtk4" "niri" "qt" "kcolorscheme" ];
+          builtin_ids = [ "gtk3" "gtk4" "niri" "qt" "kcolorscheme" "ghostty" "foot" "alacritty" ];
           community_ids = [ "discord" "telegram" "obsidian" "zed" "steam" "obs" ];
         };
       };
@@ -189,6 +193,9 @@
           hide_when_no_media = true;
           title_scroll = "on_hover";
         };
+      };
+      clipboard = {
+
       };
     };
   };

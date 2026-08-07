@@ -10,6 +10,9 @@ in
 
   programs.niri.enable = true;
 
+  # Включаем GVFS для корректной работы Nautilus в Niri
+  services.gvfs.enable = true;
+
   services.greetd = {
     enable = true;
     settings.default_session = {

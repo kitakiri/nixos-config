@@ -1,25 +1,24 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # Основной файловый менеджер и архиватор
-    kdePackages.dolphin
-    kdePackages.ark
+    nautilus
+    file-roller          # Интеграция архивов в контекстное меню Nautilus
+    sushi                # Быстрый предпросмотр файлов по нажатию Пробела
 
-    # Плагины превью (миниатюры для видео, фото, PDF и т.д.)
-    kdePackages.kdegraphics-thumbnailers # Фото, RAW, PDF
-    kdePackages.ffmpegthumbs             # Видео миниатюры
-    kdePackages.kio-extras               # Расширенная поддержка протоколов и превью
+    # Плагины превью (миниатюры для видео и файлов)
+    ffmpegthumbnailer
 
-    # Поддержка работы архиваторов с разными форматами
+    # Поддержка форматов архивов
     p7zip
     unzip
     rar
   ];
 
-  # Назначаем Dolphin файловым менеджером по умолчанию
+  # Назначаем Nautilus файловым менеджером по умолчанию
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "inode/directory" = [ "org.kde.dolphin.desktop" ];
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     };
   };
 }

@@ -22,6 +22,7 @@
     ./lutris.nix
     ./terminal.nix
     ./filemanager.nix
+    ./texteditor.nix
   ];
 
   home.username = "kitakiri";

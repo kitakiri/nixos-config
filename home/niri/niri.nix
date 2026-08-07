@@ -1,19 +1,48 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: {
   programs.niri = {
     enable = true;
-
     settings = {
+      overview = {
+        backdrop-color = "#131318";
+      };
       hotkey-overlay.skip-at-startup = true;
       prefer-no-csd = true;
       layout = {
+        gaps = 12;
         border = {
-          enable = true; # Акцентные рамки вместо заголовков
-          width = 2;
+          enable = true;
+          width = 5;
+
+          active.color = "#9b37af";
+          inactive.color = "#c1c1ff";
+          urgent.color = "#ffb4ab";
+        };
+        focus-ring = {
+          enable = true;
+          width = 3;
+          active.color = "#9b37af";
+          #inactive.color = "#e8e1ea";
+          urgent.color = "#fd4663";
+        };
+        shadow = {
+          enable = true;
+          softness = 25;
+          spread = 10;
+          offset = { x = 2; y = 4; };
+          color = "#00000070";
+        };
+        tab-indicator = {
+          active.color = "#c1c1ff";
+          inactive.color = "#404178";
+          urgent.color = "#ffb4ab";
+        };
+        insert-hint = {
+          enable = true;
+          display.color = "#c1c1ff80";
         };
       };
       #
@@ -57,11 +86,12 @@
       #
       binds = with config.lib.niri.actions; {
         # Приложения и меню
-        "Super+Return".action = spawn "ghostty";
-        "Super+T".action = spawn "dolphin";
+        "Super+T".action = spawn "foot";
+        "Super+E".action = spawn "nautilus";
         "Alt+Space".action = spawn "noctalia" "msg" "panel-toggle" "launcher";
         "Super+N".action = spawn "noctalia" "msg" "panel-toggle" "control-center";
         "Super+C".action = spawn "noctalia" "msg" "panel-toggle" "clipboard";
+        "Super+L".action = spawn "noctalia" "msg" "session" "lock";
 
         # Управление окнами
         "Super+Q".action = close-window;
@@ -71,10 +101,10 @@
         # Навигация по окнам в колонках
         "Super+Left".action  = focus-column-left;
         "Super+Right".action = focus-column-right;
-        "Super+Ctrl+WheelScrollUp".action  = focus-column-left;
-        "Super+Ctrl+WheelScrollDown".action = focus-column-right;
-        "Super+Up".action    = focus-window-up;
-        "Super+Down".action  = focus-window-down;
+        "Alt+WheelScrollUp".action  = focus-column-left;
+        "Alt+WheelScrollDown".action = focus-column-right;
+        # "Super+Up".action    = focus-window-up;
+        # "Super+Down".action  = focus-window-down;
 
         # Перемещение колонок
         "Super+Shift+Left".action  = move-column-left;
@@ -107,6 +137,9 @@
 
         # Скриншот выделенной области в буфер обмена
         "Super+Shift+S".action = spawn "noctalia" "msg" "screenshot-region";
+
+        # Переключение микрофона
+        "Alt+M".action = spawn "noctalia" "msg" "mic-mute";
       };
 
       #
