@@ -19,7 +19,7 @@
     #kdePackages.gwenview                # Просмотр изображений
     #kdePackages.okular                  # Просмотр PDF и документов
     #kdePackages.elisa                   # Музыкальный плеер
-    kdePackages.partitionmanager
-    kdePackages.filelight
+
+
   ];
 }

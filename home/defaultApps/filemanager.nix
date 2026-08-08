@@ -1,8 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    # Основной файловый менеджер и архиватор
+    # Основной файловый менеджер
     nautilus
+    # архиватор
     kdePackages.ark
+    kdePackages.breeze-icons
     # Плагины превью (миниатюры для видео и файлов)
     ffmpegthumbnailer
 

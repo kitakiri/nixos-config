@@ -12,5 +12,7 @@
     btop
     tldr # настроил обнову в home/fish.nix
     mission-center
+    kdePackages.partitionmanager
+    kdePackages.filelight
   ];
 }

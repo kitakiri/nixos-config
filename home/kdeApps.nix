@@ -1,12 +1,12 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # --- Основной набор приложений ---
-    kdePackages.gwenview                # Просмотр изображений
-    kdePackages.okular                  # Просмотр PDF и документов
-    kdePackages.elisa                   # Музыкальный плеер
-    kdePackages.dragon                  # Видосы
+    #kdePackages.gwenview                # Просмотр изображений
+    #kdePackages.okular                  # Просмотр PDF и документов
+    #kdePackages.elisa                   # Музыкальный плеер
+    #kdePackages.dragon                  # Видосы
     #kdePackages.ark                     # Архиватор
-    kdePackages.kate                    # Текстовый редактор
+    #kdePackages.kate                    # Текстовый редактор
 
     # --- Расширения для полноценной работы Dolphin ---
     #kdePackages.kio-extras              # Поддержка SFTP, SMB (Samba), MTP (смартфоны) и просмотр архивов
