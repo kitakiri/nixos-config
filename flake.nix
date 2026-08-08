@@ -38,7 +38,9 @@
     plasma-manager,
     nur,
     ...
-  }: {
+  }: let
+    username = "kitakiri";
+  in {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -56,16 +58,16 @@
               inputs.noctalia.homeModules.default
             ];
 
-            users.kitakiri = import ./home/home.nix;
+            users.${username} = import ./home/home.nix;
 
             extraSpecialArgs = {
-              inherit inputs;
+              inherit inputs username;
             };
           };
         }
       ];
       specialArgs = {
-        inherit inputs;
+        inherit inputs username;
       };
     };
   };

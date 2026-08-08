@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   ...
 }: {
   imports = [
@@ -21,8 +19,11 @@
     # ./emulation.nix
     ./lutris.nix
     ./terminal.nix
-    ./filemanager.nix
-    ./texteditor.nix
+    #./filemanager.nix
+    #./texteditor.nix
+    ./defaultApps/default.nix
+    # ./kdeApps.nix
+    ./vesktop.nix
   ];
 
   home.username = "kitakiri";

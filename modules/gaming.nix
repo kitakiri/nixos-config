@@ -22,4 +22,8 @@
   users.users.kitakiri.extraGroups = [
     "input"
   ];
+
+  environment.systemPackages = with pkgs; [
+    heroic
+  ];
 }

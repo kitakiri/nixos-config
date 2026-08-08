@@ -20,4 +20,7 @@
       # XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
     };
   };
+  xdg.mimeApps = {
+    enable = true;
+  };
 }

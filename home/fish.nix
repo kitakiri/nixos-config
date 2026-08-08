@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, username, config, ...}: {
   programs.fish = {
     enable = true;
 
@@ -18,7 +18,14 @@
       gs = "git status";
     };
 
-    shellAbbrs = {
+    functions = {
+      nixconfget-info = ''
+        nixos-option -I nixos-config=${config.home.homeDirectory}/nixos-config/hosts/desktop/configuration.nix $argv
+      '';
+
+      nixhomget-info = ''
+        nix eval --json ~/nixos-config#nixosConfigurations.desktop.config.home-manager.users.${username}.$argv
+      '';
     };
 
     interactiveShellInit = ''
