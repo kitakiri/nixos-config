@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  networking.hostName = "nixos";
+{pkgs, hostname, ...}: {
+  networking.hostName = hostname;
   networking.networkmanager.enable = true;
 
   networking.firewall = {

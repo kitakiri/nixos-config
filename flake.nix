@@ -39,13 +39,11 @@
     nur,
     ...
   }: let
-    username = "kitakiri";
-  in {
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+    mkHost = { hostname, username }: nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
-        ./hosts/desktop/configuration.nix
+        ./hosts/${hostname}/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -58,17 +56,22 @@
               inputs.noctalia.homeModules.default
             ];
 
-            users.${username} = import ./home/home.nix;
+            users.${username} = import ./hosts/${hostname}/home.nix;
 
             extraSpecialArgs = {
-              inherit inputs username;
+              inherit inputs username hostname;
             };
           };
         }
       ];
       specialArgs = {
-        inherit inputs username;
+        inherit inputs username hostname;
       };
+    };
+  in {
+    nixosConfigurations.desktop = mkHost {
+      hostname = "desktop";
+      username = "kitakiri";
     };
   };
 }
