@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
 
     ../../modules/boot.nix
-    ../../modules/networking.nix
+    ../../modules/networking
     ../../modules/localization.nix
     ../../modules/desktop.nix
     ../../modules/sound.nix

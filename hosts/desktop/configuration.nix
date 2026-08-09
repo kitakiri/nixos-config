@@ -9,7 +9,7 @@
 
     "${myModules}/boot.nix"
     "${myModules}/gc.nix"
-    "${myModules}/networking.nix"
+    "${myModules}/networking"
     "${myModules}/kdeConnect.nix"
     "${myModules}/localization.nix"
     "${myModules}/desktop/niri/default.nix"
