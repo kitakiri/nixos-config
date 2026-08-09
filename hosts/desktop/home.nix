@@ -3,7 +3,7 @@
   ...
 }: {
   imports = [
-    ../../home/common.nix
+    ../../home/core/default.nix
     ../../home/browser.nix
     ../../home/obs.nix
     ../../home/packages.nix
