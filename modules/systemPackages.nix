@@ -6,7 +6,6 @@
     curl
     qpwgraph # аналог Helvum
     helvum
-    # xray
     qbittorrent
     htop
     btop

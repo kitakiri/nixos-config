@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -19,7 +19,7 @@
     '';
   };
 
-  users.users.kitakiri.extraGroups = [
+  users.users.${username}.extraGroups = [
     "input"
   ];
 

@@ -2,12 +2,13 @@
 {
   pkgs,
   inputs,
+  username,
   ...
 }: {
   programs.firefox = {
     enable = true;
 
-    profiles.kitakiri = {
+    profiles.${username} = {
       # Настройки из about:config
       settings = {
         "ui.key.menuAccessKeyFocuses" = false;

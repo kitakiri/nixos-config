@@ -56,7 +56,7 @@
               inputs.noctalia.homeModules.default
             ];
 
-            users.${username} = import ./hosts/${hostname}/home.nix;
+            users.${username} = ./hosts/${hostname}/home.nix;
 
             extraSpecialArgs = {
               inherit inputs username hostname;

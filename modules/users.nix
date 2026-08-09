@@ -1,12 +1,9 @@
-{...}: {
-  users.users.kitakiri = {
+{ username, ... }: {
+  users.users.${username} = {
     isNormalUser = true;
-
-    description = "kitakiri";
-
+    description = username;
     extraGroups = [
       "networkmanager"
-
       "wheel"
     ];
   };

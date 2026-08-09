@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 
 {
   options.modules.sound.music.enable = lib.mkEnableOption "music, MIDI and DAW tools (guitar, routing, etc.)";
@@ -18,7 +18,7 @@
     };
 
     # Добавляем пользователя в группу audio
-    users.users.kitakiri.extraGroups = [ "audio" ];
+    users.users.${username}.extraGroups = [ "audio" ];
 
     # Софт для гитары и маршрутизации
     environment.systemPackages = with pkgs; [
