@@ -39,7 +39,12 @@
     nur,
     ...
   }: let
-    mkHost = { hostname, username }: nixpkgs.lib.nixosSystem {
+    mkHost = { hostname, username }:
+    let
+      myModules = ./modules;
+      myHome = ./home;
+    in
+    nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       modules = [
@@ -59,13 +64,13 @@
             users.${username} = ./hosts/${hostname}/home.nix;
 
             extraSpecialArgs = {
-              inherit inputs username hostname;
+              inherit inputs username hostname myHome;
             };
           };
         }
       ];
       specialArgs = {
-        inherit inputs username hostname;
+        inherit inputs username hostname myModules;
       };
     };
   in {

@@ -68,6 +68,11 @@
             options = "grp:caps_toggle";
           };
         };
+        mouse = {
+          accel-profile = "adaptive";
+          accel-speed = 0.0;
+          natural-scroll = false;
+        };
       };
 
       cursor = {
@@ -165,8 +170,8 @@
           ];
           open-focused = false;
           default-floating-position = {
-            x = 15;
-            y = 15;
+            x = 12;
+            y = 12;
             relative-to = "bottom-right";
           };
         }

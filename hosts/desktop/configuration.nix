@@ -1,33 +1,31 @@
 {
-  config,
-  pkgs,
+  myModules,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
+    "${myModules}/hardware/nvidia.nix"
+    "${myModules}/hardware/bluetooth.nix"
 
-    ../../modules/boot.nix
-    ../../modules/gc.nix
-    ../../modules/networking.nix
-    ../../modules/kdeConnect.nix
-    ../../modules/localization.nix
-    ../../modules/desktop/niri/default.nix
-    ../../modules/desktop/filemanagers.nix
-    ../../modules/fonts.nix
-    ../../modules/icons.nix
-    ../../modules/sound/sound.nix
-    ../../modules/printing.nix
-    ../../modules/users.nix
-    ../../modules/sandbox.nix
-    ../../modules/fish.nix
-    ../../modules/systemPackages.nix
-    # ../../modules/sessionVariables.nix
+    "${myModules}/boot.nix"
+    "${myModules}/gc.nix"
+    "${myModules}/networking.nix"
+    "${myModules}/kdeConnect.nix"
+    "${myModules}/localization.nix"
+    "${myModules}/desktop/niri/default.nix"
+    "${myModules}/desktop/filemanager.nix"
+    "${myModules}/fonts.nix"
+    "${myModules}/icons.nix"
+    "${myModules}/sound/sound.nix"
+    "${myModules}/printing.nix"
+    "${myModules}/users.nix"
+    "${myModules}/sandbox.nix"
+    "${myModules}/fish.nix"
+    "${myModules}/systemPackages.nix"
+    # ${myModules}/sessionVariables.nix
 
-    ../../modules/gaming.nix
-    ../../modules/nix-ld.nix
-
-    ../../modules/hardware/nvidia.nix
-    ../../modules/hardware/bluetooth.nix
+    "${myModules}/gaming.nix"
+    "${myModules}/nix-ld.nix"
   ];
 
   nix.settings = {
