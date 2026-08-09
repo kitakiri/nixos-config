@@ -7,25 +7,25 @@
     "${myModules}/hardware/nvidia.nix"
     "${myModules}/hardware/bluetooth.nix"
 
-    "${myModules}/boot.nix"
-    "${myModules}/gc.nix"
-    "${myModules}/networking.nix"
-    "${myModules}/kdeConnect.nix"
-    "${myModules}/localization.nix"
+    "${myModules}/core/boot.nix"
+    "${myModules}/nix/gc.nix"
+    "${myModules}/core/networking.nix"
+    "${myModules}/programs/kdeConnect.nix"
+    "${myModules}/core/localization.nix"
     "${myModules}/desktop/niri/default.nix"
     "${myModules}/desktop/filemanager.nix"
-    "${myModules}/fonts.nix"
-    "${myModules}/icons.nix"
+    "${myModules}/appearance/fonts.nix"
+    "${myModules}/appearance/icons.nix"
     "${myModules}/sound/sound.nix"
-    "${myModules}/printing.nix"
-    "${myModules}/users.nix"
-    "${myModules}/sandbox.nix"
-    "${myModules}/fish.nix"
-    "${myModules}/systemPackages.nix"
-    # ${myModules}/sessionVariables.nix
+    "${myModules}/hardware/printing.nix"
+    "${myModules}/core/users.nix"
+    "${myModules}/programs/sandbox.nix"
+    "${myModules}/programs/fish.nix"
+    "${myModules}/core/systemPackages.nix"
+    # ${myModules}/core/sessionVariables.nix
 
-    "${myModules}/gaming.nix"
-    "${myModules}/nix-ld.nix"
+    "${myModules}/programs/gaming.nix"
+    "${myModules}/nix/nix-ld.nix"
   ];
 
   nix.settings = {
