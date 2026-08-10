@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # Включаем поддержку Flatpak
   services.flatpak.enable = true;
 
