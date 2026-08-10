@@ -6,26 +6,33 @@
     ./hardware-configuration.nix
     "${myModules}/hardware/nvidia.nix"
     "${myModules}/hardware/bluetooth.nix"
+    "${myModules}/hardware/printing.nix"
 
-    "${myModules}/boot.nix"
-    "${myModules}/gc.nix"
-    "${myModules}/networking.nix"
-    "${myModules}/kdeConnect.nix"
-    "${myModules}/localization.nix"
+    #"${myModules}/boot.nix"
+    # "${myModules}/systemPackages.nix"
+    # "${myModules}/sessionVariables.nix"
+    # "${myModules}/localization.nix"
+    # "${myModules}/networking.nix"
+    # "${myModules}/users.nix"
+    # "${myModules}/gc.nix"
+    # "${myModules}/nix-ld.nix"
+    # # "${myModules}/fonts.nix"
+    # "${myModules}/icons.nix"
+
+
+    "${myModules}/core/default.nix"
+    "${myModules}/nix/defauilt.nix"
+    "${myModules}/sound/default.nix"
+    "${myModules}/appearance/default.nix"
+
     "${myModules}/desktop/niri/default.nix"
     "${myModules}/desktop/filemanager.nix"
-    "${myModules}/fonts.nix"
-    "${myModules}/icons.nix"
-    "${myModules}/sound/sound.nix"
-    "${myModules}/printing.nix"
-    "${myModules}/users.nix"
-    "${myModules}/sandbox.nix"
-    "${myModules}/fish.nix"
-    "${myModules}/systemPackages.nix"
-    # ${myModules}/sessionVariables.nix
 
-    "${myModules}/gaming.nix"
-    "${myModules}/nix-ld.nix"
+    "${myModules}/programs/kdeConnect.nix"
+    "${myModules}/programs/sandbox.nix"
+    "${myModules}/programs/gaming.nix"
+    "${myModules}/programs/droidcam.nix"
+
   ];
 
   nix.settings = {
@@ -36,7 +43,6 @@
     substituters = [
       "https://cache.nixos.kz/"
       "https://cache.nixos.org/"
-
     ];
 
   };

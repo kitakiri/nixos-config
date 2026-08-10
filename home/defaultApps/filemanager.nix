@@ -4,7 +4,6 @@
     nautilus
     # архиватор
     kdePackages.ark
-    kdePackages.breeze-icons
     # Плагины превью (миниатюры для видео и файлов)
     ffmpegthumbnailer
 

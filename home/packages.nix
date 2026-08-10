@@ -7,5 +7,13 @@
     krita
     bazaar
     meld
+    wget
+    curl
+    qpwgraph # аналог Helvum
+    helvum
+    qbittorrent
+    htop
+    btop
+    tldr # настроил обнову в home/fish.nix
   ];
 }

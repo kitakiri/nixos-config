@@ -6,11 +6,12 @@
   imports = [
     "${myHome}/core/default.nix"
     "${myHome}/browser.nix"
-    "${myHome}/obs.nix"
-    "${myHome}/packages.nix"
-    "${myHome}/niri/default.nix"
-    "${myHome}/lutris.nix"
     "${myHome}/defaultApps/default.nix"
+    "${myHome}/packages.nix"
+    "${myHome}/development/default.nix"
+    "${myHome}/niri/default.nix"
+    "${myHome}/obs.nix"
+    "${myHome}/lutris.nix"
     "${myHome}/vesktop.nix"
   ];
 

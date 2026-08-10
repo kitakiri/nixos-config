@@ -22,5 +22,6 @@
   };
   xdg.mimeApps = {
     enable = true;
+    xdgOpenUsePortal = true;
   };
 }
