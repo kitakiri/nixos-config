@@ -60,7 +60,7 @@
       };
 
       dock = {
-        background_opacity = 0.85;
+        background_opacity = 0.75;
         enabled = true;
         inactive_opacity = 0.9;
         layer = "top";

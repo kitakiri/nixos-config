@@ -5,14 +5,10 @@
 }: {
   imports = [
     "${myHome}/core/default.nix"
-    "${myHome}/browser.nix"
-    "${myHome}/defaultApps/default.nix"
-    "${myHome}/packages.nix"
-    "${myHome}/development/default.nix"
     "${myHome}/niri/default.nix"
-    "${myHome}/obs.nix"
-    "${myHome}/lutris.nix"
-    "${myHome}/vesktop.nix"
+    "${myHome}/defaultApps/default.nix"
+    "${myHome}/development/default.nix"
+    "${myHome}/programs/default.nix"
   ];
 
   home.username = username;

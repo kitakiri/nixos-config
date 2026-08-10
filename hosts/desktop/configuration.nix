@@ -21,7 +21,7 @@
 
 
     "${myModules}/core/default.nix"
-    "${myModules}/nix/defauilt.nix"
+    "${myModules}/nix/default.nix"
     "${myModules}/sound/default.nix"
     "${myModules}/appearance/default.nix"
 
