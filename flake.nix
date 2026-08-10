@@ -26,6 +26,11 @@
       url = "github:noctalia-dev/noctalia";
       # разрабы не рекомендуют следовать кэшу nixpkgs
     };
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake";
     };
@@ -59,6 +64,7 @@
               plasma-manager.homeModules.plasma-manager
               inputs.niri.homeModules.niri
               inputs.noctalia.homeModules.default
+              inputs.noctalia-greeter.nixosModules.default
             ];
 
             users.${username} = ./hosts/${hostname}/home.nix;
