@@ -28,11 +28,12 @@
     };
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri = {
       url = "github:sodiboo/niri-flake";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -55,6 +56,7 @@
       modules = [
         ./hosts/${hostname}/configuration.nix
         home-manager.nixosModules.home-manager
+        inputs.noctalia-greeter.nixosModules.default
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -64,19 +66,23 @@
               plasma-manager.homeModules.plasma-manager
               inputs.niri.homeModules.niri
               inputs.noctalia.homeModules.default
-              inputs.noctalia-greeter.nixosModules.default
+              {
+                # явно берём готовый niri-unstable из собственной
+                # сборки niri-flake, а не из общего useGlobalPkgs pkgs
+                programs.niri.package = inputs.niri.packages.x86_64-linux.niri-unstable;
+              }
             ];
 
             users.${username} = ./hosts/${hostname}/home.nix;
 
             extraSpecialArgs = {
-              inherit inputs username hostname myHome;
+              inherit self inputs username hostname myHome;
             };
           };
         }
       ];
       specialArgs = {
-        inherit inputs username hostname myModules;
+        inherit self inputs username hostname myModules;
       };
     };
   in {

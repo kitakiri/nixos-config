@@ -3,7 +3,7 @@
     ./browser.nix
     ./packages.nix
     ./obs.nix
-    ./lutris
+    ./lutris.nix
     ./vesktop.nix
   ];
 }

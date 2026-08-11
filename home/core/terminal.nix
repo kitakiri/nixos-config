@@ -10,6 +10,7 @@
 
       colors-dark = {
         alpha = "0.85";
+        blur = true;
       };
 
       key-bindings = {

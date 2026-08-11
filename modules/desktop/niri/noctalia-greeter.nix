@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, self, ... }: let
+  myWallpapersPath = "${self}/assets";
+  myDefaultWallpaper = "${myWallpapersPath}/wallhaven-8o2lm2_6000x3375.png";
+in {
   programs.noctalia-greeter = {
     enable = true;
 
@@ -14,6 +17,12 @@
       };
       keyboard = {
         layout = "us";
+      };
+      appearance = {
+        wallpaper = {
+          path = myDefaultWallpaper;
+          fill_mode = "crop";
+        };
       };
     };
   };

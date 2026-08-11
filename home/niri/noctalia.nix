@@ -1,4 +1,7 @@
-{ config, ... }: {
+{ config, self, ... }: let
+  myWallpapersPath = "${self}/assets";
+  myDefaultWallpaper = "${myWallpapersPath}/wallhaven-8o2lm2_6000x3375.png";
+in {
   programs.noctalia = {
     enable = true;
 
@@ -53,7 +56,7 @@
           rotation = 0.0;
           type = "sticker";
           settings = {
-            image_path = "${config.home.homeDirectory}/Pictures/eve/image.png";
+            image_path = "${myWallpapersPath}/eve1.png";
             opacity = 1.0;
           };
         };
@@ -179,10 +182,10 @@
       };
 
       wallpaper = {
-        directory = "${config.home.homeDirectory}/Pictures";
-        default.path = "${config.home.homeDirectory}/Pictures/wallhaven-8o2lm2_6000x3375.png";
-        last.path = "${config.home.homeDirectory}/Pictures/wallhaven-8o2lm2_6000x3375.png";
-        monitors."DP-2".path = "${config.home.homeDirectory}/Pictures/wallhaven-8o2lm2_6000x3375.png";
+        directory = myWallpapersPath;
+        default.path = myDefaultWallpaper;
+        last.path = myDefaultWallpaper;
+        monitors."DP-2".path = myDefaultWallpaper;
       };
 
       widget = {
