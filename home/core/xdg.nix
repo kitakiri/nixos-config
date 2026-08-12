@@ -22,6 +22,7 @@
   };
 
   xdg.mimeApps.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.xdgOpenUsePortal = true;
+  xdg.portal = {
+    xdgOpenUsePortal = true;
+  };
 }

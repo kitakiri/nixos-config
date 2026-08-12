@@ -1,8 +1,10 @@
 { pkgs, ... }: {
+  dconf.settings."org/gnome/desktop/wm/preferences" = {
+    button-layout = ":";
+  };
   gtk = {
     enable = true;
-    gtk3.extraConfig.gtk-decoration-layout = ":";
-    gtk4.extraConfig.gtk-decoration-layout = ":";
+
     iconTheme = {
       name = "MoreWaita";
       package = pkgs.morewaita-icon-theme;

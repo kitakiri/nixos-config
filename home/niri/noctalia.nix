@@ -1,6 +1,7 @@
 { config, self, ... }: let
   myWallpapersPath = "${self}/assets";
-  myDefaultWallpaper = "${myWallpapersPath}/wallhaven-8o2lm2_6000x3375.png";
+  darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dark.png";
+  lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_light.png";
 in {
   programs.noctalia = {
     enable = true;
@@ -182,10 +183,12 @@ in {
       };
 
       wallpaper = {
-        directory = myWallpapersPath;
-        default.path = myDefaultWallpaper;
-        last.path = myDefaultWallpaper;
-        monitors."DP-2".path = myDefaultWallpaper;
+        # directory = myWallpapersPath;
+        default.path = lightWallpaper;
+        # last.path = myDefaultWallpaper;
+        directory_light = "${myWallpapersPath}/light_theme";
+        directory_dark  = "${myWallpapersPath}/dark_theme";
+        # monitors."DP-2".path = myDefaultWallpaper;
       };
 
       widget = {
@@ -199,6 +202,26 @@ in {
       };
       clipboard = {
 
+      };
+      hooks = {
+        theme_mode_changed = [
+          ''
+            if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
+              noctalia msg wallpaper-set "${darkWallpaper}"
+            else
+              noctalia msg wallpaper-set "${lightWallpaper}"
+            fi
+          ''
+        ];
+        started = [
+          ''
+            if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
+              noctalia msg wallpaper-set "${darkWallpaper}"
+            else
+              noctalia msg wallpaper-set "${lightWallpaper}"
+            fi
+          ''
+        ];
       };
     };
   };
