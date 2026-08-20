@@ -18,5 +18,7 @@
     mission-center
     kdePackages.partitionmanager
     kdePackages.filelight
+    pear-desktop # electron youtube music
+    tauon # local music
   ];
 }

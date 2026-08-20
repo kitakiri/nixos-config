@@ -12,6 +12,9 @@
     ];
 
     userSettings = {
+      features = {
+        direnv = "on";
+      };
       project_panel = {
         dock = "left";
       };

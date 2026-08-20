@@ -5,5 +5,6 @@
     ./obs.nix
     ./lutris.nix
     ./vesktop.nix
+    ./spotify.nix
   ];
 }

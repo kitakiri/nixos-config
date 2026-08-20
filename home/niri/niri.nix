@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 let
-  noctaliaConfigPath = "${config.home.homeDirectory}/.config/niri/";
+  niriConfigPath = "${config.home.homeDirectory}/.config/niri/";
   configNiriKdl = ''
     input {
         keyboard {
@@ -32,11 +32,11 @@ let
     prefer-no-csd
 
     overview {
-        // backdrop-color "#131318"
+        backdrop-color "#343456"
     }
 
     // Темы с рамками от noctalia
-    include optional=true "${noctaliaConfigPath}/noctalia.kdl"
+    include optional=true "${niriConfigPath}/noctalia.kdl"
     layout {
         gaps 12
         struts {
@@ -143,7 +143,7 @@ let
         match app-id="^org.gnome.Nautilus$"
 
         draw-border-with-background false
-        opacity 0.93
+        opacity 0.9
 
         background-effect {
             xray true // xray true с просветом на рабочий стол более дешевый к gpu
@@ -159,7 +159,6 @@ let
             xray false
         }
     }
-
   '';
   configFile = pkgs.writeText "config.kdl" configNiriKdl;
 in

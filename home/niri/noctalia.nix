@@ -2,6 +2,14 @@
   myWallpapersPath = "${self}/assets";
   darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dark.png";
   lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_light.png";
+
+  applyWallpaperScript = ''
+    if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
+      noctalia msg wallpaper-set "${darkWallpaper}"
+    else
+      noctalia msg wallpaper-set "${lightWallpaper}"
+    fi
+  '';
 in {
   programs.noctalia = {
     enable = true;
@@ -14,9 +22,10 @@ in {
       };
 
       bar.default = {
-        background_opacity = 0.85;
+        background_opacity = 0.6;
         center = [ "clock" "media" ];
         end = [
+          "privacy"
           "tray"
           "notifications"
           "clipboard"
@@ -38,6 +47,12 @@ in {
           "audio_visualizer"
         ];
         widget_spacing = 12;
+        concave_edge_corners = false;
+        radius = 8;
+        radius_top_left = 24;
+        radius_top_right = 24;
+        radius_bottom_left = 24;
+        radius_bottom_right = 24;
       };
 
       desktop_widgets = {
@@ -64,18 +79,20 @@ in {
       };
 
       dock = {
-        background_opacity = 0.75;
+        background_opacity = 0.6;
         enabled = true;
         inactive_opacity = 0.9;
         layer = "top";
         magnification_scale = 1.65;
-        radius = 40;
-        radius_bottom_left = 8;
-        radius_bottom_right = 8;
-        radius_top_left = 80;
         reserve_space = false;
         show_dots = true;
         smart_auto_hide = true;
+        radius = 16;
+        radius_top_left = 16;
+        radius_top_right = 16;
+        radius_bottom_left = 16;
+        radius_bottom_right = 16;
+        concave_edge_corners = false;
       };
 
       idle = {
@@ -147,8 +164,13 @@ in {
       };
 
       notification = {
-        background_opacity = 0.95;
+        background_opacity = 0.75;
         position = "top_center";
+      };
+
+      osd = {
+        enable = true;
+        background_opacity = 0.60;
       };
 
       shell = {
@@ -177,8 +199,8 @@ in {
         source = "wallpaper";
         wallpaper_scheme = "m3-tonal-spot";
         templates = {
-          builtin_ids = [ "gtk3" "gtk4" "niri" "qt" "kcolorscheme" "ghostty" "foot" "alacritty" ];
-          community_ids = [ "discord" "telegram" "obsidian" "zed" "steam" "obs" ];
+          builtin_ids = [ "gtk3" "gtk4" "niri" "qt" "kcolorscheme" "foot" ];
+          community_ids = [ "tauon" "pear-desktop" "discord" "telegram" "obsidian" "zed" "steam" "obs" ];
         };
       };
 
@@ -192,6 +214,9 @@ in {
       };
 
       widget = {
+        privacy = {
+          hide_when_inactive = true;
+        };
         audio_visualizer.mirrored = false;
         clock.format = "{:%d %h %H:%M}";
         lock_keys.hide_when_off = true;
@@ -200,28 +225,14 @@ in {
           title_scroll = "on_hover";
         };
       };
+
+
       clipboard = {
 
       };
       hooks = {
-        theme_mode_changed = [
-          ''
-            if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
-              noctalia msg wallpaper-set "${darkWallpaper}"
-            else
-              noctalia msg wallpaper-set "${lightWallpaper}"
-            fi
-          ''
-        ];
-        started = [
-          ''
-            if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
-              noctalia msg wallpaper-set "${darkWallpaper}"
-            else
-              noctalia msg wallpaper-set "${lightWallpaper}"
-            fi
-          ''
-        ];
+        theme_mode_changed = [ applyWallpaperScript ];
+        started = [ applyWallpaperScript ];
       };
     };
   };
