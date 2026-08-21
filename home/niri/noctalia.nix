@@ -1,7 +1,7 @@
 { config, self, ... }: let
   myWallpapersPath = "${self}/assets";
-  darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dark_ascii.png";
-  lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_light_ascii.png";
+  darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dream_dark.png";
+  lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_dream.png";
   applyWallpaperScript = ''
     if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
       noctalia msg wallpaper-set "${darkWallpaper}"
