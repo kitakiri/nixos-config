@@ -7,7 +7,9 @@
 }: {
   programs.firefox = {
     enable = true;
-
+    nativeMessagingHosts = [
+      pkgs.pywalfox-native
+    ];
     profiles.${username} = {
       # Настройки из about:config
       settings = {
@@ -18,6 +20,7 @@
         packages = with inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons; [
           ublock-origin
           bitwarden
+          pywalfox
         ];
       };
     };

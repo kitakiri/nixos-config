@@ -2,7 +2,6 @@
   myWallpapersPath = "${self}/assets";
   darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dark.png";
   lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_light.png";
-
   applyWallpaperScript = ''
     if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
       noctalia msg wallpaper-set "${darkWallpaper}"
@@ -23,9 +22,14 @@ in {
 
       bar.default = {
         background_opacity = 0.6;
+        start = [
+          "workspaces"
+          "active_window"
+          "audio_visualizer"
+          "privacy"
+        ];
         center = [ "clock" "media" ];
         end = [
-          "privacy"
           "tray"
           "notifications"
           "clipboard"
@@ -41,11 +45,6 @@ in {
         ];
         font_family = "Inter Display";
         scale = 1.2;
-        start = [
-          "workspaces"
-          "active_window"
-          "audio_visualizer"
-        ];
         widget_spacing = 12;
         concave_edge_corners = false;
         radius = 8;
@@ -200,7 +199,7 @@ in {
         wallpaper_scheme = "m3-tonal-spot";
         templates = {
           builtin_ids = [ "gtk3" "gtk4" "niri" "qt" "kcolorscheme" "foot" ];
-          community_ids = [ "tauon" "pear-desktop" "discord" "telegram" "obsidian" "zed" "steam" "obs" ];
+          community_ids = [ "pywalfox-beta4" "tauon" "pear-desktop" "discord" "telegram" "obsidian" "zed" "steam" "obs" ];
         };
       };
 
@@ -215,7 +214,7 @@ in {
 
       widget = {
         privacy = {
-          hide_when_inactive = true;
+          hide_inactive = true;
         };
         audio_visualizer.mirrored = false;
         clock.format = "{:%d %h %H:%M}";
