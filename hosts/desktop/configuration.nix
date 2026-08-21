@@ -7,6 +7,7 @@
     "${myModules}/hardware/nvidia.nix"
     "${myModules}/hardware/bluetooth.nix"
     "${myModules}/hardware/printing.nix"
+    "${myModules}/hardware/wacom.nix"
 
     #"${myModules}/boot.nix"
     # "${myModules}/systemPackages.nix"

@@ -12,13 +12,10 @@
     ];
 
     userSettings = {
-      features = {
-        direnv = "on";
-      };
+      load_direnv = "shell_hook";
       project_panel = {
         dock = "left";
       };
-
       agent = {
         dock = "right";
         favorite_models = [];
@@ -28,7 +25,6 @@
       # Явное включение и настройка MCP-серверов
       context_servers = {
         "mcp-server-context7" = {
-          source = "extension";
           enabled = true;
 
           settings = {
