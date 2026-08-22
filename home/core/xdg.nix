@@ -16,8 +16,7 @@
     # Кастомные директории, которые будут записаны "как есть" (например, XDG_PROJECTS_DIR)
     extraConfig = {
       XDG_PROJECTS_DIR = "${config.home.homeDirectory}/Projects";
-      # Сюда же можно добавлять любые другие:
-      # XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
+      XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
     };
   };
 

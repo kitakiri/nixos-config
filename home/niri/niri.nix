@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, username, lib, ... }:
 
 let
   niriConfigPath = "${config.home.homeDirectory}/.config/niri/";
@@ -15,7 +15,9 @@ let
         }
         touchpad {
             tap
+            tap-button-map "left-right-middle"
             natural-scroll
+            // dwt
         }
         mouse {
             accel-speed 0.000000
@@ -23,16 +25,17 @@ let
         }
     }
 
-    output "DP-2" {
+    output "${config.myOptions.monitor.name}" {
         transform "normal"
-        mode "3440x1440@144.000000"
+        // mode "3440x1440@144.000"
+        ${lib.optionalString (config.myOptions.monitor.mode != null) ''mode "${config.myOptions.monitor.mode}"''}
     }
 
     screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
     prefer-no-csd
 
     overview {
-        backdrop-color "#343456"
+        backdrop-color "#7c86b8"
     }
 
     // Темы с рамками от noctalia
@@ -82,40 +85,52 @@ let
     }
 
     binds {
-        Alt+M { spawn "noctalia" "msg" "mic-mute"; }
+        // 1. Приложения (Applications)
+        Super+T { spawn "foot"; }
+        Super+E { spawn "nautilus"; }
+
+        // 2. Noctalia Shell & Системные модули
         Alt+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
-        Alt+WheelScrollDown { focus-column-right; }
+        Super+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+        Super+N { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+        Super+Shift+S { spawn "noctalia" "msg" "screenshot-region"; }
+        Super+L { spawn "noctalia" "msg" "session" "lock"; }
+
+        // 3. Управление окнами и колонками
+        Super+Q { close-window; }
+        Super+F { fullscreen-window; }
+        Ctrl+Shift+T { toggle-window-floating; }
+        Super+R { switch-preset-column-width; }
+        Super+Ctrl+Left { set-column-width "-10%"; }
+        Super+Ctrl+Right { set-column-width "+10%"; }
+
+        // 4. Фокус и перемещение колонок/окон
+        Super+Left { focus-column-left; }
+        Super+Right { focus-column-right; }
         Alt+WheelScrollUp { focus-column-left; }
+        Alt+WheelScrollDown { focus-column-right; }
+        Super+Shift+Left { move-column-left; }
+        Super+Shift+Right { move-column-right; }
+
+        // 5. Воркспейсы и Режим обзора
+        Super+W { toggle-overview; }
+        Super+Up { focus-workspace-up; }
+        Super+Down { focus-workspace-down; }
+        Super+WheelScrollUp { focus-workspace-up; }
+        Super+WheelScrollDown { focus-workspace-down; }
+        Super+Shift+Up { move-column-to-workspace-up; }
+        Super+Shift+Down { move-column-to-workspace-down; }
         Ctrl+F1 { focus-workspace 1; }
         Ctrl+F2 { focus-workspace 2; }
         Ctrl+F3 { focus-workspace 3; }
         Ctrl+F4 { focus-workspace 4; }
-        Super+C { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
-        Super+Ctrl+Left { set-column-width "-10%"; }
-        Super+Ctrl+Right { set-column-width "+10%"; }
-        Super+Down { focus-workspace-down; }
-        Super+E { spawn "nautilus"; }
-        Super+F { fullscreen-window; }
-        Super+L { spawn "noctalia" "msg" "session" "lock"; }
-        Super+Left { focus-column-left; }
-        Super+N { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
-        Super+Q { close-window; }
-        Super+R { switch-preset-column-width; }
-        Super+Right { focus-column-right; }
-        Super+Shift+Down { move-column-to-workspace-down; }
-        Super+Shift+Left { move-column-left; }
-        Super+Shift+Right { move-column-right; }
-        Super+Shift+S { spawn "noctalia" "msg" "screenshot-region"; }
-        Super+Shift+Up { move-column-to-workspace-up; }
-        Super+T { spawn "foot"; }
-        Super+Up { focus-workspace-up; }
-        Super+W { toggle-overview; }
-        Super+WheelScrollDown { focus-workspace-down; }
-        Super+WheelScrollUp { focus-workspace-up; }
+
+        // 6. Звук и медиауправление
+        XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
         XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
         XF86AudioMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
         XF86AudioPlay { spawn "playerctl" "play-pause"; }
-        XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+        Alt+M { spawn "noctalia" "msg" "mic-mute"; }
     }
 
     spawn-at-startup "noctalia"
@@ -148,6 +163,12 @@ let
         background-effect {
             xray true // xray true с просветом на рабочий стол более дешевый к gpu
             blur true
+        }
+        popups {
+            background-effect {
+                xray false
+                blur true
+            }
         }
     }
 

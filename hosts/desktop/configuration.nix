@@ -54,5 +54,5 @@
 
   # кастомные модули:
   # Включаем daw , уменьшаем задержки, включаем софт для гитары и группу audio
-  modules.sound.music.enable = true;
+  myOptions.sound.music.enable = true;
 }

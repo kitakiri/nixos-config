@@ -4,6 +4,7 @@
 
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#${hostname}";
+      nrt = "sudo nixos-rebuild test --flake ~/nixos-config#${hostname}";
       nrb = "sudo nixos-rebuild build --flake ~/nixos-config#${hostname}";
       nrr = "sudo nixos-rebuild --rollback";
       nfu = "nix flake update --flake ~/nixos-config";

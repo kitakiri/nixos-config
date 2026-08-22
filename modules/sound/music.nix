@@ -1,9 +1,9 @@
 { config, lib, pkgs, username, ... }:
 
 {
-  options.modules.sound.music.enable = lib.mkEnableOption "music, MIDI and DAW tools (guitar, routing, etc.)";
+  options.myOptions.sound.music.enable = lib.mkEnableOption "music, MIDI and DAW tools (guitar, routing, etc.)";
 
-  config = lib.mkIf config.modules.sound.music.enable {
+  config = lib.mkIf config.myOptions.sound.music.enable {
     # низкая задержка для игры на гитаре
     services.pipewire.extraConfig.pipewire = {
       "10-clock-rate" = {

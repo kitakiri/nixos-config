@@ -2,6 +2,10 @@
   myWallpapersPath = "${self}/assets";
   darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dream_dark.png";
   lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_dream.png";
+  monitorName = config.myOptions.monitor.name;
+  centerX     = config.myOptions.monitor.width / 2.0;
+  centerY     = config.myOptions.monitor.height / 2.0;
+
   applyWallpaperScript = ''
     if [ "$NOCTALIA_THEME_MODE" = "dark" ]; then
       noctalia msg wallpaper-set "${darkWallpaper}"
@@ -65,9 +69,9 @@ in {
         widget."desktop-widget-0000000000000001" = {
           box_height = 0.0;
           box_width = 0.0;
-          cx = 1720.0;
-          cy = 720.0;
-          output = "DP-2";
+          cx = centerX;
+          cy = centerY;
+          output = "${monitorName}";
           rotation = 0.0;
           type = "sticker";
           settings = {
@@ -124,18 +128,18 @@ in {
       lockscreen_widgets = {
         enabled = false;
         schema_version = 2;
-        widget_order = [ "lockscreen-login-box@DP-2" ];
+        widget_order = [ "lockscreen-login-box@${monitorName}" ];
         grid = {
           cell_size = 16;
           major_interval = 4;
           visible = true;
         };
-        widget."lockscreen-login-box@DP-2" = {
+        widget."lockscreen-login-box@${monitorName}" = {
           box_height = 196.0;
           box_width = 810.0;
-          cx = 1720.0;
-          cy = 1258.0;
-          output = "DP-2";
+          cx = centerX;
+          cy = centerY;
+          output = "${monitorName}";
           rotation = 0.0;
           type = "login_box";
           settings = {
@@ -204,12 +208,9 @@ in {
       };
 
       wallpaper = {
-        # directory = myWallpapersPath;
         default.path = lightWallpaper;
-        # last.path = myDefaultWallpaper;
         directory_light = "${myWallpapersPath}/light_theme";
         directory_dark  = "${myWallpapersPath}/dark_theme";
-        # monitors."DP-2".path = myDefaultWallpaper;
       };
 
       widget = {

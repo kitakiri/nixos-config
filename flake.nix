@@ -30,11 +30,6 @@
       url = "github:noctalia-dev/noctalia-greeter";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # niri = {
-    #   url = "github:sodiboo/niri-flake";
-    #   # inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs = inputs @ {
@@ -65,12 +60,6 @@
             sharedModules = [
               plasma-manager.homeModules.plasma-manager
               inputs.noctalia.homeModules.default
-              # inputs.niri.homeModules.niri
-              # {
-              #   # явно берём готовый niri-unstable из собственной
-              #   # сборки niri-flake, а не из общего useGlobalPkgs pkgs
-              #   programs.niri.package = inputs.niri.packages.x86_64-linux.niri-unstable;
-              # }
             ];
 
             users.${username} = ./hosts/${hostname}/home.nix;
