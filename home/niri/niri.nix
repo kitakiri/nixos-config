@@ -1,4 +1,4 @@
-{ pkgs, config, username, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 let
   niriConfigPath = "${config.home.homeDirectory}/.config/niri/";
@@ -165,6 +165,8 @@ let
             blur true
         }
         popups {
+            geometry-corner-radius 15
+            opacity 0.85
             background-effect {
                 xray false
                 blur true
