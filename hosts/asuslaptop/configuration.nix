@@ -19,7 +19,6 @@
     "${myModules}/programs/kdeConnect.nix"
     "${myModules}/programs/sandbox.nix"
     "${myModules}/programs/gaming.nix"
-    "${myModules}/programs/droidcam.nix"
   ];
 
   nix.settings = {
