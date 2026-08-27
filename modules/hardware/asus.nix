@@ -8,6 +8,7 @@
   # Управление питанием и температурами
   services.thermald.enable = true;             # Защита от перегрева и троттлинга Intel
   services.power-profiles-daemon.enable = true; # Профили энергосбережения
+  services.upower.enable = true;
 
 
   # Пользовательские утилиты в систему

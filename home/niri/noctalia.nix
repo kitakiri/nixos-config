@@ -1,4 +1,4 @@
-{ config, self, ... }: let
+{ config, self, hostname, lib, ... }: let
   myWallpapersPath = "${self}/assets";
   darkWallpaper = "${myWallpapersPath}/dark_theme/nixos_wallpaper_dream_dark.png";
   lightWallpaper = "${myWallpapersPath}/light_theme/nixos_wallpaper_dream.png";
@@ -44,7 +44,6 @@ in {
           "bluetooth"
           "brightness"
           "battery"
-          "control-center"
           "session"
         ];
         font_family = "Inter Display";
@@ -56,6 +55,11 @@ in {
         radius_top_right = 24;
         radius_bottom_left = 24;
         radius_bottom_right = 24;
+      } // lib.optionalAttrs (hostname == "asuslaptop") {
+        margin_ends = 12;
+
+        radius_top_left = 0;
+        radius_top_right = 0;
       };
 
       desktop_widgets = {

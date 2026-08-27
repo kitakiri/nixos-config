@@ -15,9 +15,11 @@
     "${myModules}/appearance/default.nix"
     "${myModules}/desktop/niri/default.nix"
 
-    "${myModules}/programs/kdeConnect.nix"
+
     "${myModules}/programs/sandbox.nix"
     "${myModules}/programs/gaming.nix"
+    "${myModules}/programs/kdeConnect.nix"
+    "${myModules}/programs/localsend.nix"
   ];
 
   nix.settings = {

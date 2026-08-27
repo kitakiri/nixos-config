@@ -25,7 +25,5 @@
     cliPackage = pkgs.xray;
   };
 
-  services.cloudflare-warp = {
-    enable = true;
-  };
+  # services.cloudflare-warp.enable = true;
 }
