@@ -34,10 +34,6 @@ let
     screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
     prefer-no-csd
 
-    overview {
-        backdrop-color "#7c86b8"
-    }
-
     // Темы с рамками от noctalia
     include optional=true "${niriConfigPath}/noctalia.kdl"
     layout {
@@ -181,6 +177,12 @@ let
         background-effect {
             xray false
         }
+    }
+
+    // заблюренный overview
+    layer-rule {
+        match namespace="^noctalia-backdrop"
+        place-within-backdrop true
     }
   '';
   configFile = pkgs.writeText "config.kdl" configNiriKdl;

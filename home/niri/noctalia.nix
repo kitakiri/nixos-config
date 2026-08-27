@@ -226,9 +226,17 @@ in {
         };
       };
 
+      # для прозрачности и блюра в режиме обзора
+      backdrop = {
+        enabled = true;
+        blur_intensity = 1.0;
+        tint_intensity = 0.75;
+      };
 
       clipboard = {
-
+        store_images = true;
+        ignore_passwords = false;
+        clear_on_lock = false;
       };
       hooks = {
         theme_mode_changed = [ applyWallpaperScript ];
