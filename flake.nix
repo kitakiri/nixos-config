@@ -44,6 +44,7 @@
     let
       myModules = ./modules;
       myHome = ./home;
+      myRoot = ./.;
     in
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -66,13 +67,13 @@
             users.${username} = ./hosts/${hostname}/home.nix;
 
             extraSpecialArgs = {
-              inherit self inputs username hostname myHome;
+              inherit self inputs username hostname myHome myRoot;
             };
           };
         }
       ];
       specialArgs = {
-        inherit self inputs username hostname myModules;
+        inherit self inputs username hostname myModules myRoot;
       };
     };
   in {

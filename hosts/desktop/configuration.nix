@@ -1,5 +1,6 @@
 {
   myModules,
+  myRoot,
   ...
 }: {
   imports = [
@@ -21,7 +22,6 @@
     "${myModules}/programs/gaming.nix"
     "${myModules}/programs/droidcam.nix"
     "${myModules}/programs/localsend.nix"
-
   ];
 
   nix.settings = {
