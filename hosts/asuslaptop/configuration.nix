@@ -14,7 +14,6 @@
     "${myModules}/sound/default.nix"
     "${myModules}/appearance/default.nix"
     "${myModules}/desktop/niri/default.nix"
-    "${myModules}/desktop/filemanager.nix"
 
     "${myModules}/programs/kdeConnect.nix"
     "${myModules}/programs/sandbox.nix"

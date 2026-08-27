@@ -56,6 +56,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
+            backupFileExtension = "backup";
 
             sharedModules = [
               plasma-manager.homeModules.plasma-manager
@@ -77,6 +78,10 @@
   in {
     nixosConfigurations.desktop = mkHost {
       hostname = "desktop";
+      username = "kitakiri";
+    };
+    nixosConfigurations.asuslaptop = mkHost {
+      hostname = "asuslaptop";
       username = "kitakiri";
     };
   };

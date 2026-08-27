@@ -8,7 +8,6 @@
     "${myHome}/nix/default.nix"
     "${myHome}/niri/default.nix"
     "${myHome}/defaultApps/default.nix"
-    # "${myHome}/development/default.nix"
     "${myHome}/programs/default.nix"
   ];
 
