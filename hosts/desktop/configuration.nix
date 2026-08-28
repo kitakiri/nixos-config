@@ -1,6 +1,5 @@
 {
   myModules,
-  myRoot,
   ...
 }: {
   imports = [
