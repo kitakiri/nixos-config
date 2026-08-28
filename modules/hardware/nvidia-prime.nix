@@ -9,10 +9,11 @@
     powerManagement.finegrained = true;
 
     # Для мобильных GPU Ampere (30-я серия) проприетарный драйвер надежнее в управлении питанием
-    open = false;
+    open = true;
 
     nvidiaSettings = false; # На Wayland/Niri GUI-панель не нужна
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
 
     prime = {
       offload = {
