@@ -8,7 +8,9 @@
     "${myHome}/nix/default.nix"
     "${myHome}/niri/default.nix"
     "${myHome}/defaultApps/default.nix"
+
     "${myHome}/programs/default.nix"
+    "${myHome}/programs/kdenlive.nix"
   ];
 
   home.username = username;
