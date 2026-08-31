@@ -26,10 +26,6 @@
       context_servers = {
         "mcp-server-context7" = {
           enabled = true;
-
-          settings = {
-            context7_api_key = "ctx7sk-892df689-01cb-4496-a06f-80c4b57b314b";
-          };
         };
       };
 
