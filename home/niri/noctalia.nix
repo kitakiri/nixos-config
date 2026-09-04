@@ -207,7 +207,7 @@ in {
         wallpaper_scheme = "m3-tonal-spot";
         templates = {
           builtin_ids = [ "gtk3" "gtk4" "niri" "qt" "kcolorscheme" "foot" ];
-          community_ids = [ "pywalfox-beta4" "tauon" "pear-desktop" "discord" "telegram" "obsidian" "zed" "steam" "obs" ];
+          community_ids = [ "pywalfox-beta4" "discord" "telegram" "obsidian" "zed" ];
         };
       };
 
@@ -233,8 +233,8 @@ in {
       # для прозрачности и блюра в режиме обзора
       backdrop = {
         enabled = true;
-        blur_intensity = 1.0;
-        tint_intensity = 0.75;
+        blur_intensity = 1.6;
+        tint_intensity = 0.5;
       };
 
       clipboard = {
